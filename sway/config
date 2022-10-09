@@ -7,8 +7,18 @@ set $right l
 set $term terminator
 set $menu rofi -show drun exec --
 
+# Fonts
+font pango:Jetbrains mono medium 11
+
+# Window Borders
+default_border pixel 3
+titlebar_border_thickness 3
+titlebar_padding 15 4
+gaps inner 5px
+gaps outer 10px
+
 # Outputs
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output "*" bg /usr/share/backgrounds/woods.jpg fill
 output eDP-1 resolution 1920x1080 position 2560,0
 output DP-2 resolution 2560x1440 position 0,0
 
@@ -37,7 +47,6 @@ exec swayidle -w \
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
-
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
@@ -95,12 +104,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-    position bottom
-    font pango:Jetbrains mono medium 11
-    status_command while ~/.config/sway/status.sh; do sleep 60; done
-    colors {
-    }
+bar { 
+     swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
