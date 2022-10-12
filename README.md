@@ -7,6 +7,7 @@ Some useful packages:
 - `slurp`
 - `grim`
 - `rofi`
+- `playerctl`
 - a good and nice terminal emulator
 - correct color recognition might help
 
