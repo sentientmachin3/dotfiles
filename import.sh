@@ -2,5 +2,5 @@
 
 cp -R ~/.config/sway/ ./
 cp -R ~/.config/waybar ./
-cp -R ~/.config/rofi ./
+cp -R ~/.config/wofi ./
 cp -R ~/.config/kitty ./
