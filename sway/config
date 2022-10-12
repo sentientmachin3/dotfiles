@@ -4,11 +4,11 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term terminator
+set $term kitty
 set $menu rofi -show drun exec --
 
 # Fonts
-font pango:Jetbrains mono medium 11
+font pango:Jetbrains mono medium 10
 
 # Window Borders
 default_border pixel 3
@@ -22,9 +22,6 @@ output "*" bg /usr/share/backgrounds/woods.jpg fill
 output eDP-1 resolution 1920x1080 position 2560,0
 output DP-2 resolution 2560x1440 position 0,0
 
-exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-
 # Input configuration
    input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
        dwt enabled
@@ -32,6 +29,8 @@ exec swayidle -w \
        natural_scroll enabled
        middle_emulation enabled
    }
+
+   input * xkb_options compose:rwin
 # Keybindings
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+q kill
@@ -55,6 +54,7 @@ exec swayidle -w \
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+    bindsym $mod+Ctrl+l exec swaylock -f -c 000000
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3

@@ -39,9 +39,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "BAT {capacity}% {icon}",
-    "format-charging": "BAT {capacity}%",
-    "format-plugged": "BAT {capacity}%"
+    "format": "BAT [DIS]{capacity}% {icon}",
+    "format-charging": "BAT [CHR]{capacity}%",
+    "format-plugged": "BAT [FULL]{capacity}%",
   },
   "network": {
     "format-wifi": "WiFi {essid} ({signalStrength}%)",
@@ -58,6 +58,6 @@
     "format-muted": " {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
-    "on-click": "pavucontrol"
+    "on-click": "playerctl play-pause"
   }
 }
