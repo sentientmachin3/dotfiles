@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu rofi -show drun exec --
+set $menu wofi --show drun exec --
 
 # Fonts
 font pango:Jetbrains mono medium 10
