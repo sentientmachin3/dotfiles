@@ -6,8 +6,8 @@ Some useful packages:
 - `waybar`
 - `slurp`
 - `grim`
-- `rofi`
+- `wofi`
 - `playerctl`
-- a good and nice terminal emulator
-- correct color recognition might help
+- `kitty`
+- `dunst`
 
