@@ -37,7 +37,7 @@ output DP-2 resolution 2560x1440 position 0,0
     bindsym $mod+d exec $menu
     floating_modifier $mod normal
     bindsym $mod+Shift+c reload
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec $HOME/.config/wofi/powermenu.sh
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
