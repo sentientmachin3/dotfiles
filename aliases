@@ -1,0 +1,16 @@
+alias top='htop'
+alias g='git status'
+alias uu='yes | yay --noconfirm -Syyu'
+alias lsorphans='sudo pacman -Qdt'
+alias rmorphans='sudo pacman -Rns $(lsorphans| cut -d " " -f 1)'
+
+# List aliases
+alias l='ls -hAlo'
+alias ll='ls -hol'
+alias la='ls -aA'
+
+alias df='df -h'
+alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syyu'
+alias gl='git log --oneline'
+alias less='bat --decorations never'
+alias vim='nvim'
