@@ -1,5 +1,8 @@
+
+workspace_layout tabbed
+
 # Vars
-set $mod Mod1
+set $mod Mod4
 set $left h
 set $down j
 set $up k
@@ -8,12 +11,11 @@ set $term kitty
 set $menu wofi --show drun exec --
 
 # Fonts
-font pango:Jetbrains mono medium 10
+font pango:sf mono 11
 
 # Window Borders
-default_border pixel 3
-titlebar_border_thickness 3
-titlebar_padding 15 4
+default_border pixel
+default_floating_border pixel
 gaps inner 5px
 gaps outer 10px
 
@@ -87,6 +89,7 @@ output DP-2 resolution 2560x1440 position 0,0
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
     bindsym Print exec grim
+    bindsym Shift+Print exec grim $(slurp)
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
