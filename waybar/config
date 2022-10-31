@@ -41,7 +41,7 @@
     },
     "format": "BAT [DIS]{capacity}% {icon}",
     "format-charging": "BAT [CHR]{capacity}%",
-    "format-plugged": "BAT [FULL]{capacity}%",
+    "format-plugged": "BAT [FULL]{capacity}%"
   },
   "network": {
     "format-wifi": "WiFi {essid} ({signalStrength}%)",
@@ -59,5 +59,16 @@
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "on-click": "playerctl play-pause"
+  },
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
   }
 }

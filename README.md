@@ -1,13 +1,15 @@
 # swayconf
+
 Fuck fancy desktop environments.
 
-Some useful packages: 
+Some useful packages:
+
 - `sway`
 - `waybar`
+- `swayr`
 - `slurp`
 - `grim`
 - `wofi`
 - `playerctl`
 - `kitty`
 - `dunst`
-

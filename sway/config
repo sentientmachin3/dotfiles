@@ -1,5 +1,7 @@
 
 workspace_layout tabbed
+xwayland enable
+exec swayrd &
 
 # Vars
 set $mod Mod4
@@ -11,11 +13,13 @@ set $term kitty
 set $menu wofi --show drun exec --
 
 # Fonts
-font pango:sf mono 11
+font pango:sf mono 0
 
 # Window Borders
-default_border pixel
-default_floating_border pixel
+titlebar_padding 1
+titlebar_border_thickness 1
+default_border none
+default_floating_border none
 gaps inner 5px
 gaps outer 10px
 
@@ -44,18 +48,13 @@ output DP-2 resolution 2560x1440 position 0,0
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    bindsym $mod+Left workspace prev
+    bindsym $mod+Right workspace next
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+    bindsym $mod+Tab exec swayr next-window all-workspaces
     bindsym $mod+Ctrl+l exec swaylock -f -c 000000
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
