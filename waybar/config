@@ -28,6 +28,7 @@
     "format": "{:%H:%M   %a, %d %h %Y}"
   },
   "backlight": {
+    "device": "intel_backlight",
     "format": " {percent}%"
   },
   "battery": {
