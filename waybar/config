@@ -25,38 +25,34 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{:%H:%M   %d-%m-%Y}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
+    "format": "{:%H:%M   %a, %d %h %Y}"
   },
   "backlight": {
-    "format": "BKL {percent}%"
+    "format": " {percent}%"
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "BAT [DIS]{capacity}% {icon}",
-    "format-charging": "BAT [CHR]{capacity}%",
-    "format-plugged": "BAT [FULL]{capacity}%"
+    "format": " {capacity}%",
+    "format-charging": " [CHR] {capacity}%",
+    "format-full": " FULL"
   },
   "network": {
-    "format-wifi": "WiFi {essid} ({signalStrength}%)",
-    "format-ethernet": "ETH {ipaddr}/{cidr}",
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": " {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr}",
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    "format": "VOL {volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format": " {volume}% {format_source}",
+    "format-bluetooth": " {volume}% {format_source}",
+    "format-bluetooth-muted": " {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": " {volume}%",
     "format-source-muted": "",
     "on-click": "playerctl play-pause"
   },
