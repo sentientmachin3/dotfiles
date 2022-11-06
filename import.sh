@@ -8,3 +8,4 @@ cp -R ~/.config/dunst ./
 cp ~/.zshrc ./zshrc
 cp ~/.aliases ./aliases
 cp ~/.zprofile ./zprofile
+cp ~/.config/nvim/init.vim ./init.vim

@@ -36,6 +36,9 @@ output DP-2 resolution 2560x1440 position 0,0
        middle_emulation enabled
    }
 
+# particular windows configurations
+assign [class="Spotify"] workspace 9
+
    input * xkb_options compose:rwin
 # Keybindings
     bindsym $mod+Return exec $term
@@ -88,7 +91,7 @@ output DP-2 resolution 2560x1440 position 0,0
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
     bindsym Print exec grim
-    bindsym Shift+Print exec grim $(slurp)
+    bindsym Shift+Print exec grim -g "$(slurp)"
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
