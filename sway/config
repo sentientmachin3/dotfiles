@@ -37,7 +37,7 @@ output DP-2 resolution 2560x1440 position 0,0
    }
 
 # particular windows configurations
-assign [class="Spotify"] workspace 9
+assign [class="Spotify"] workspace 0
 
    input * xkb_options compose:rwin
 # Keybindings
@@ -57,7 +57,8 @@ assign [class="Spotify"] workspace 9
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-    bindsym $mod+Tab exec swayr next-window all-workspaces
+    bindsym $mod+Tab exec swayr next-window current-workspace
+    bindsym $mod+Shift+Tab workspace next
     bindsym $mod+Ctrl+l exec swaylock -f -c 000000
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2

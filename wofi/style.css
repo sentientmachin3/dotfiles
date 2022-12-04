@@ -15,6 +15,7 @@ window {
     border-radius: 8px;
     font-family: "sf mono", monospace;
     font-size: 15px;
+    font-weight: 600;
 }
 
 #input {

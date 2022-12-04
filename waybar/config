@@ -12,7 +12,6 @@
   "modules-right": [
     "pulseaudio",
     "network",
-    "backlight",
     "keyboard-state",
     "battery",
     "tray",
