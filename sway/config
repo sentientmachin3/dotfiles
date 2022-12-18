@@ -1,4 +1,3 @@
-
 workspace_layout tabbed
 xwayland enable
 exec swayrd &
@@ -9,7 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty tmux
+set $term kitty
 set $menu wofi --show drun exec --
 
 # Fonts
