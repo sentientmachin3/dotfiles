@@ -8,4 +8,7 @@ cp -R ~/.config/dunst ./
 cp ~/.zshrc ./zshrc
 cp ~/.aliases ./aliases
 cp ~/.zprofile ./zprofile
-cp ~/.config/nvim/init.vim ./init.vim
+
+mkdir -p nvim/lua
+cp ~/.config/nvim/init.vim ./nvim/init.vim
+cp ~/.config/nvim/lua/plugins.lua ./nvim/lua/plugins.lua
