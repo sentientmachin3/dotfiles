@@ -23,7 +23,7 @@ gaps inner 5px
 gaps outer 10px
 
 # Outputs
-output "*" bg /usr/share/backgrounds/woods.jpg fill
+output "*" bg /usr/share/backgrounds/bg.jpg fill
 output eDP-1 resolution 1920x1080 position 2560,0
 output DP-2 resolution 2560x1440 position 0,0
 
