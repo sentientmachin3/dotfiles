@@ -5,8 +5,7 @@
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  background-color: rgba(40, 40, 40, 0.5);
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -22,7 +21,6 @@ window#waybar.termite {
 
 #workspaces button {
   padding: 0 5px;
-  background-color: transparent;
   color: #ffffff;
   box-shadow: inset 0 -3px transparent;
   border: none;
@@ -35,7 +33,6 @@ window#waybar.termite {
 }
 
 #workspaces button.focused {
-  background-color: #64727D;
   box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -56,6 +53,7 @@ window#waybar.termite {
 #tray {
   padding: 0 10px;
   color: #ffffff;
+  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
 }
 
 #window,
@@ -72,14 +70,6 @@ window#waybar.termite {
   margin-right: 0;
 }
 
-#clock {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
-#battery {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
   color: #ffffff;
@@ -88,26 +78,6 @@ window#waybar.termite {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#backlight {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
-#network {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
-#pulseaudio {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
-#pulseaudio.muted {
-  background-color: rgba(83, 83, 83, 0.8);
-}
-
-#tray {
-  background-color: rgba(83, 83, 83, 0.8);
 }
 
 #tray>.passive {
@@ -120,7 +90,6 @@ window#waybar.termite {
 }
 
 #keyboard-state {
-  background: rgba(83, 83, 83, 0.8);
   padding: 0 0px;
   margin: 0 5px;
   min-width: 16px;
@@ -128,8 +97,4 @@ window#waybar.termite {
 
 #keyboard-state>label {
   padding: 0 5px;
-}
-
-#keyboard-state>label.locked {
-  background: rgba(83, 83, 83, 0.8);
 }

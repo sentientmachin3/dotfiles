@@ -4,7 +4,7 @@
 * Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 *
 */
-@define-color background #2D2D2D;
+@define-color background #202020
 @define-color input-text #C2C2C2;
 @define-color choice-color #BABABA;
 @define-color selected-bg #535353;
