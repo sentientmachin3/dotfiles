@@ -8,3 +8,5 @@ This repo contains my configuration files for my dev / daily driver environment,
 - `dunst` as notification manager
 
 My own `zshrc` and a bunch of custom aliases are also included.
+
+![screenshot](screenshot.png)
