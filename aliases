@@ -14,3 +14,4 @@ alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200
 alias gl='git log --oneline'
 alias less='bat --decorations never'
 alias vim='nvim'
+alias v='nvim'
