@@ -30,7 +30,7 @@ output DP-2 resolution 2560x1440 position 0,0
 # Input configuration
 input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
    dwt enabled
-   tap enabled
+   tap enabled 
    natural_scroll enabled
    middle_emulation enabled
 }
@@ -55,7 +55,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 bindsym $mod+Tab exec swayr next-window current-workspace
-bindsym $mod+Shift+Tab workspace next
+bindsym $mod+Shift+Tab exec swayr switch-window 
 bindsym $mod+Ctrl+l exec swaylock -f -c 000000
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
