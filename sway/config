@@ -12,7 +12,7 @@ set $term kitty tmux
 set $menu wofi --show drun exec --
 
 # Fonts
-font pango:sf mono 0
+font pango:sf mono 1
 
 # Window Borders
 titlebar_padding 1
