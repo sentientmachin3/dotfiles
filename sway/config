@@ -49,7 +49,7 @@ bindsym $mod+Shift+e exec $HOME/.config/wofi/powermenu.sh
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 bindsym $mod+$right workspace next
-bindsym $mod+$left workspace next
+bindsym $mod+$left workspace prev
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
