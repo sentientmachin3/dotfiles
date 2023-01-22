@@ -137,7 +137,7 @@ else
     -- [[ Configure Treesitter ]]
     -- See `:help nvim-treesitter`
     require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'lua', 'python', 'rust', 'typescript', 'help' },
+        ensure_installed = { 'lua', 'python', 'rust', 'help' },
         highlight = { enable = true },
         indent = { enable = true, disable = { 'python' } },
         incremental_selection = {
