@@ -42,3 +42,4 @@ map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
 map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)

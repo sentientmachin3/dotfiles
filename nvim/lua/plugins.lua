@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
     use('romgrk/barbar.nvim')
     use('nvim-lualine/lualine.nvim')
     use('lewis6991/gitsigns.nvim')
-    use('ms-jpq/coq_nvim')
     use('numToStr/Comment.nvim')
     use { 'nvim-telescope/telescope.nvim',
         requires = {
@@ -19,6 +18,9 @@ return require('packer').startup(function(use)
     use('jose-elias-alvarez/typescript.nvim')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+    use { 'hrsh7th/nvim-cmp',
+        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    }
 
     -- Plugins config
     require('nvim-treesitter.configs').setup({
@@ -41,7 +43,6 @@ return require('packer').startup(function(use)
     require('lualine').setup({
         options = {
             icons_enabled = true,
-            theme = 'tokyonight',
         }
     })
 
