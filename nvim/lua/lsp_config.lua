@@ -1,4 +1,9 @@
 local cmp = require('cmp')
+local null_ls = require('null-ls')
+local prettier = require('prettier')
+local lsp_config = require('lspconfig')
+local lsp_comp = require('cmp_nvim_lsp')
+
 local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -22,8 +27,6 @@ local on_attach = function(_, bufnr)
 end
 
 
-local lsp_config = require('lspconfig')
-local lsp_comp = require('cmp_nvim_lsp')
 lsp_config['pyright'].setup {
     on_attach = on_attach,
     capabilities = lsp_comp.default_capabilities()
@@ -63,14 +66,13 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help' }
     }, {
         { name = 'buffer' },
     })
 })
 
 -- null-ls related stuff for improved typescript dev
-local null_ls = require('null-ls')
-local prettier = require('prettier')
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettier,

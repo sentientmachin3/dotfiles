@@ -43,3 +43,6 @@ map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+-- LSP mix remaps
+vim.keymap.set('n', '<leader>fp', '<Cmd>Prettier<CR>')
