@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
     use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
     use('romgrk/barbar.nvim')
     use('nvim-lualine/lualine.nvim')
+    use('windwp/nvim-autopairs')
+    use('windwp/nvim-ts-autotag')
     use('lewis6991/gitsigns.nvim')
     use('numToStr/Comment.nvim')
     use { 'nvim-telescope/telescope.nvim',
@@ -18,18 +20,23 @@ return require('packer').startup(function(use)
     use('jose-elias-alvarez/typescript.nvim')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+    use('onsails/lspkind.nvim')
     use { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
     }
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        requires = { { "nvim-tree/nvim-web-devicons" } }
+    })
 
     -- Plugins config
     require('nvim-treesitter.configs').setup({
         ensure_installed = { 'python', 'typescript', 'json', 'rust', 'lua' },
         sync_install = false,
         auto_install = true,
-        highlight = {
-            enable = true,
-        }
+        highlight = { enable = true, },
+        autotag = { enable = true }
     })
 
     require('github-theme').setup({
@@ -68,4 +75,10 @@ return require('packer').startup(function(use)
     require('telescope').setup()
     require('Comment').setup()
     require('nvim-web-devicons').setup()
+    require('lspkind').init({
+        mode = 'symbol_text',
+        preset = 'codicons',
+    })
+    require('nvim-autopairs').setup()
+    require("lspsaga").setup({})
 end)

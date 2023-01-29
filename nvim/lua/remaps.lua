@@ -1,3 +1,4 @@
+-- Common remaps
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -46,3 +47,8 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
 -- LSP mix remaps
 vim.keymap.set('n', '<leader>fp', '<Cmd>Prettier<CR>')
+
+-- LSPsaga remaps
+vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>") -- Symbol definition
+vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")  -- Code action
+vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>") -- Rename
