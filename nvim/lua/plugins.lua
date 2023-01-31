@@ -80,5 +80,7 @@ return require('packer').startup(function(use)
         preset = 'codicons',
     })
     require('nvim-autopairs').setup()
-    require("lspsaga").setup({})
+    require("lspsaga").setup({
+        lightbulb = { enable = false }
+    })
 end)
