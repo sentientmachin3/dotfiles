@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     use('windwp/nvim-ts-autotag')
     use('lewis6991/gitsigns.nvim')
     use('numToStr/Comment.nvim')
+    use('shaunsingh/nord.nvim')
     use { 'nvim-telescope/telescope.nvim',
         requires = {
             { 'nvim-lua/plenary.nvim' }
@@ -31,6 +32,7 @@ return require('packer').startup(function(use)
     })
 
     -- Plugins config
+    require('nord').set()
     require('nvim-treesitter.configs').setup({
         ensure_installed = { 'python', 'typescript', 'json', 'rust', 'lua' },
         sync_install = false,
@@ -39,17 +41,10 @@ return require('packer').startup(function(use)
         autotag = { enable = true }
     })
 
-    require('github-theme').setup({
-        theme_style = 'dimmed',
-        comment_style = "NONE",
-        keyword_style = "NONE",
-        function_style = "NONE",
-        variable_style = "NONE",
-    })
-
     require('lualine').setup({
         options = {
             icons_enabled = true,
+            theme = 'nord'
         }
     })
 
@@ -60,10 +55,10 @@ return require('packer').startup(function(use)
         closable = false,
         clickable = true,
         diagnostics = {
-            [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
-            [vim.diagnostic.severity.WARN] = { enabled = false },
-            [vim.diagnostic.severity.INFO] = { enabled = false },
-            [vim.diagnostic.severity.HINT] = { enabled = true },
+                [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+                [vim.diagnostic.severity.WARN] = { enabled = false },
+                [vim.diagnostic.severity.INFO] = { enabled = false },
+                [vim.diagnostic.severity.HINT] = { enabled = true },
         },
         highlight_visible = true,
         icons = 'both',
