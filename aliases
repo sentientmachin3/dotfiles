@@ -19,3 +19,4 @@ alias neovimconf='nvim ~/.config/nvim/init.lua'
 
 # Utils
 alias list_npm_scripts='jq .scripts package.json'
+alias task='go-task'
