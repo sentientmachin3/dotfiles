@@ -2,14 +2,16 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('nvim-tree/nvim-web-devicons')
     use('nvim-treesitter/nvim-treesitter')
-    use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
     use('romgrk/barbar.nvim')
     use('nvim-lualine/lualine.nvim')
     use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
     use('lewis6991/gitsigns.nvim')
     use('numToStr/Comment.nvim')
-    use('shaunsingh/nord.nvim')
+    use('williamboman/mason.nvim')
+    use('williamboman/mason-lspconfig.nvim')
+    -- use('ellisonleao/gruvbox.nvim')
+    use('monsonjeremy/onedark.nvim')
     use { 'nvim-telescope/telescope.nvim',
         requires = {
             { 'nvim-lua/plenary.nvim' }
@@ -17,10 +19,6 @@ return require('packer').startup(function(use)
     }
 
     -- Lsp stuff (loaded in lsp_config)
-    use('neovim/nvim-lspconfig')
-    use('jose-elias-alvarez/typescript.nvim')
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
     use('onsails/lspkind.nvim')
     use { 'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -32,7 +30,7 @@ return require('packer').startup(function(use)
     })
 
     -- Plugins config
-    require('nord').set()
+    require('onedark').setup()
     require('nvim-treesitter.configs').setup({
         ensure_installed = { 'python', 'typescript', 'json', 'rust', 'lua' },
         sync_install = false,
@@ -44,7 +42,7 @@ return require('packer').startup(function(use)
     require('lualine').setup({
         options = {
             icons_enabled = true,
-            theme = 'nord'
+            theme = 'onedark'
         }
     })
 

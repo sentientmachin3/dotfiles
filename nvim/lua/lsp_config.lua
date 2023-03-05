@@ -1,8 +1,9 @@
 local cmp = require('cmp')
-local null_ls = require('null-ls')
-local prettier = require('prettier')
 local lsp_config = require('lspconfig')
 local lsp_comp = require('cmp_nvim_lsp')
+local mason = require('mason')
+local mason_lsp = require('mason-lspconfig')
+local null_ls = require('null-ls')
 
 local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -24,24 +25,23 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-
-lsp_config['pyright'].setup {
-    on_attach = on_attach,
-    capabilities = lsp_comp.default_capabilities()
-}
-lsp_config['rust_analyzer'].setup {
-    on_attach = on_attach,
-    capabilities = lsp_comp.default_capabilities()
-}
-lsp_config['sumneko_lua'].setup {
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = { globals = { 'vim' } }
-        }
+mason.setup()
+mason_lsp.setup()
+mason_lsp.setup_handlers {
+  function (server_name)
+    lsp_config[server_name].setup {
+      on_attach = on_attach,
     }
+  end,
 }
-lsp_config['eslint'].setup {}
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.eslint,
+    },
+})
 
 cmp.setup({
     snippet = {
@@ -54,13 +54,13 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            ['<C-p>'] = cmp.mapping.select_prev_item(),
+            ['<C-n>'] = cmp.mapping.select_next_item(),
+            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+            ['<C-f>'] = cmp.mapping.scroll_docs(4),
+            ['<C-Space>'] = cmp.mapping.complete(),
+            ['<C-e>'] = cmp.mapping.abort(),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -68,44 +68,4 @@ cmp.setup({
     }, {
         { name = 'buffer' },
     })
-})
-
--- null-ls related stuff for improved typescript dev
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.prettier,
-        null_ls.builtins.diagnostics.eslint,
-        require("typescript.extensions.null-ls.code-actions"),
-        ["null-ls"] = {
-            condition = function()
-                return prettier.config_exists({
-                    check_package_json = true,
-                })
-            end,
-            runtime_condition = function()
-                return prettier.config_exists({
-                    check_package_json = true,
-                })
-            end,
-            timeout = 5000,
-        }
-    }
-})
-
-require('typescript').setup({
-    disable_commands = false,
-    debug = false,
-    go_to_source_definition = {
-        fallback = true,
-    },
-    server = {
-        on_attach = on_attach,
-    },
-    capabilities = lsp_comp.default_capabilities()
-})
-
-prettier.setup({
-    cli_options = {
-        config_precedence = 'prefer-file',
-    },
 })
