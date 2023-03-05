@@ -1,2 +1,2 @@
 nvim/plugin
-utils/
+utils/generate_backup_archive.sh
