@@ -16,11 +16,12 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-vim.keymap.set('n', '<leader>p', '<cmd>Ex<CR>')
+vim.keymap.set('n', '<leader>p', vim.cmd.Ex)
 
 -- Telescope remaps
 local builtins = require('telescope.builtin')
-vim.keymap.set('n', '<leader>sf', builtins.find_files, {})
+vim.keymap.set('n', '<leader>sf', builtins.git_files, {})
+vim.keymap.set('n', '<leader>ff', builtins.find_files, {})
 vim.keymap.set('n', '<leader>sg', builtins.live_grep, {})
 vim.keymap.set('n', '<leader>lk', builtins.keymaps, {})
 
