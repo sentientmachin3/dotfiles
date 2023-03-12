@@ -17,6 +17,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set('n', '<leader>p', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>t', vim.cmd.JABSOpen)
 
 -- Telescope remaps
 local builtins = require('telescope.builtin')
@@ -48,8 +49,3 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
 -- LSP mix remaps
 vim.keymap.set('n', '<leader>fp', '<Cmd>Prettier<CR>')
-
--- LSPsaga remaps
-vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>") -- Symbol definition
-vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")  -- Code action
-vim.keymap.set("n", "<leader>gr", "<cmd>Lspsaga rename<CR>") -- Rename
