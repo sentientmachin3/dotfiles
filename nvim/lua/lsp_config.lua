@@ -5,6 +5,7 @@ local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local null_ls = require("null-ls")
 local typescript = require("typescript")
+local prettier = require("prettier")
 
 local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -31,8 +32,18 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>") -- Rename
 end
 
+prettier.setup({
+	["null-ls"] = {
+		condition = function()
+			return prettier.config_exists({
+				check_package_json = true,
+			})
+		end,
+		timeout = 5000,
+	},
+})
 typescript.setup({
-    on_attach = on_attach
+	on_attach = on_attach,
 })
 mason.setup()
 mason_lsp.setup()
