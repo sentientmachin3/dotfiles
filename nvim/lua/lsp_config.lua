@@ -4,6 +4,7 @@ local lsp_comp = require("cmp_nvim_lsp")
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local null_ls = require("null-ls")
+local typescript = require("typescript")
 
 local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -30,13 +31,18 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>") -- Rename
 end
 
+typescript.setup({
+    on_attach = on_attach
+})
 mason.setup()
 mason_lsp.setup()
 mason_lsp.setup_handlers({
 	function(server_name)
-		lsp_config[server_name].setup({
-			on_attach = on_attach,
-		})
+		if server_name ~= "tsserver" then
+			lsp_config[server_name].setup({
+				on_attach = on_attach,
+			})
+		end
 		lsp_config["lua_ls"].setup({
 			on_attach = on_attach,
 			settings = { Lua = { diagnostics = { globals = { "vim" } } } },
@@ -50,6 +56,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.goimports,
+		require("typescript.extensions.null-ls.code-actions"),
 	},
 })
 

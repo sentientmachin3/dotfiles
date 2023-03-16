@@ -17,7 +17,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set('n', '<leader>p', vim.cmd.Ex)
-vim.keymap.set('n', '<leader>t', vim.cmd.JABSOpen)
+vim.keymap.set('n', '<leader>s', vim.cmd.JABSOpen)
 
 -- Telescope remaps
 local builtins = require('telescope.builtin')

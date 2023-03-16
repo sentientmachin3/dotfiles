@@ -12,6 +12,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("ellisonleao/gruvbox.nvim")
 	use("matbme/JABS.nvim")
+    use("jose-elias-alvarez/typescript.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -21,7 +22,6 @@ return require("packer").startup(function(use)
 
 	-- Lsp stuff (loaded in lsp_config)
 	use("neovim/nvim-lspconfig")
-	use("jose-elias-alvarez/typescript.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("onsails/lspkind.nvim")
 	use({
