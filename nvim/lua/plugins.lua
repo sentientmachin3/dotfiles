@@ -1,4 +1,5 @@
 return require("packer").startup(function(use)
+	use({ "sentientmachin3/bufswitch.nvim", requires = { "MunifTanjim/nui.nvim" } })
 	use("wbthomason/packer.nvim")
 	use("nvim-tree/nvim-web-devicons")
 	use("nvim-treesitter/nvim-treesitter")
@@ -8,11 +9,11 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-ts-autotag")
 	use("lewis6991/gitsigns.nvim")
 	use("numToStr/Comment.nvim")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+	})
 	use("ellisonleao/gruvbox.nvim")
-	use("matbme/JABS.nvim")
-    use("jose-elias-alvarez/typescript.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -21,10 +22,13 @@ return require("packer").startup(function(use)
 	})
 
 	-- Lsp stuff (loaded in lsp_config)
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/typescript.nvim")
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("onsails/lspkind.nvim")
-    use("MunifTanjim/prettier.nvim")
+	use("MunifTanjim/prettier.nvim")
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
@@ -36,6 +40,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Plugins config
+	require("bufswitch").setup()
 	require("gruvbox").setup({
 		undercurl = true,
 		underline = true,
@@ -54,11 +59,6 @@ return require("packer").startup(function(use)
 		transparent_mode = false,
 	})
 	vim.cmd("colorscheme gruvbox")
-	require("jabs").setup({
-		position = "center",
-		border = "rounded",
-		use_devicons = false,
-	})
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "python", "typescript", "json", "rust", "lua", "go" },
 		sync_install = false,
