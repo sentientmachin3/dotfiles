@@ -8,6 +8,7 @@ setopt promptsubst         # enable command substitution in prompt
 
 # hide EOL sign ('%')
 export PROMPT_EOL_MARK=""
+export LS_COLORS="$(vivid generate gruvbox-dark)"
 
 # Keybindings
 bindkey -e
@@ -61,7 +62,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT="%F{033}%n@%m %F{255}%~ $ "
+    PROMPT="%F{039}%n@%m %F{255}%~ $ "
 else
     PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
 fi
