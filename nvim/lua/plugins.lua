@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
-	use("ellisonleao/gruvbox.nvim")
+	use("sainnhe/gruvbox-material")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -40,25 +40,8 @@ return require("packer").startup(function(use)
 	})
 
 	-- Plugins config
+    vim.cmd("colorscheme gruvbox-material")
 	require("bufswitch").setup()
-	require("gruvbox").setup({
-		undercurl = true,
-		underline = true,
-		bold = false,
-		italic = false,
-		strikethrough = true,
-		invert_selection = false,
-		invert_signs = false,
-		invert_tabline = false,
-		invert_intend_guides = false,
-		inverse = true, -- invert background for search, diffs, statuslines and errors
-		contrast = "", -- can be "hard", "soft" or empty string
-		palette_overrides = {},
-		overrides = {},
-		dim_inactive = false,
-		transparent_mode = false,
-	})
-	vim.cmd("colorscheme gruvbox")
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "python", "typescript", "json", "rust", "lua", "go" },
 		sync_install = false,
@@ -70,7 +53,7 @@ return require("packer").startup(function(use)
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "gruvbox",
+			theme = "gruvbox-material",
 		},
 	})
 
