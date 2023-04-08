@@ -61,16 +61,19 @@ return require("packer").startup(function(use)
 		animation = false,
 		auto_hide = true,
 		tabpages = true,
-		closable = false,
 		clickable = true,
-		diagnostics = {
-			[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
-			[vim.diagnostic.severity.WARN] = { enabled = false },
-			[vim.diagnostic.severity.INFO] = { enabled = false },
-			[vim.diagnostic.severity.HINT] = { enabled = true },
-		},
 		highlight_visible = true,
-		icons = "both",
+		icons = {
+            diagnostics = {
+                [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+                [vim.diagnostic.severity.WARN] = { enabled = false },
+                [vim.diagnostic.severity.INFO] = { enabled = false },
+                [vim.diagnostic.severity.HINT] = { enabled = true },
+            },
+            buffer_index = true,
+            filetype = { enabled = true },
+            button = true
+        },
 		semantic_letters = false,
 		letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 	})
