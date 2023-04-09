@@ -1,10 +1,9 @@
 local cmp = require("cmp")
 local lsp_config = require("lspconfig")
-local lsp_comp = require("cmp_nvim_lsp")
+require("cmp_nvim_lsp")
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local null_ls = require("null-ls")
-local typescript = require("typescript")
 local prettier = require("prettier")
 
 local on_attach = function(_, bufnr)
@@ -32,6 +31,16 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>") -- Rename
 end
 
+-- Typescript function to fix all imports
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = "",
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
 prettier.setup({
 	["null-ls"] = {
 		condition = function()
@@ -42,18 +51,22 @@ prettier.setup({
 		timeout = 5000,
 	},
 })
-typescript.setup({
-	on_attach = on_attach,
-})
 mason.setup()
 mason_lsp.setup()
 mason_lsp.setup_handlers({
 	function(server_name)
-		if server_name ~= "tsserver" then
-			lsp_config[server_name].setup({
-				on_attach = on_attach,
-			})
-		end
+		lsp_config[server_name].setup({
+			on_attach = on_attach,
+		})
+		lsp_config["tsserver"].setup({
+			on_attach = on_attach,
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
+		})
 		lsp_config["lua_ls"].setup({
 			on_attach = on_attach,
 			settings = { Lua = { diagnostics = { globals = { "vim" } } } },
@@ -67,7 +80,6 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.goimports,
-		require("typescript.extensions.null-ls.code-actions"),
 	},
 })
 
