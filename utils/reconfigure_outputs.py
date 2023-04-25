@@ -13,5 +13,10 @@ for output in output_names:
     if output.startswith("eDP"):
         laptop_output = output
 
-if len(output_names) > 1:
-    subprocess.run(["swaymsg", "output", laptop_output, "disable"])
+if laptop_output is not None:
+    if len(output_names) > 1:
+        subprocess.run(["swaymsg", "output", laptop_output, "disable"])
+    else:
+        subprocess.run(["swaymsg", "output", laptop_output, "enable"])
+else:
+    print("No laptop output detected.")
