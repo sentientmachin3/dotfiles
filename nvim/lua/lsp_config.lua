@@ -29,6 +29,19 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>") -- Symbol definition
 	vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>") -- Code action
 	vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>") -- Rename
+	vim.diagnostic.config({
+		underline = true,
+		signs = true,
+		virtual_text = false,
+		float = {
+			show_header = true,
+			source = "if_many",
+			border = "rounded",
+			focusable = false,
+		},
+		update_in_insert = false, -- default to false
+		severity_sort = false, -- default to false
+	})
 end
 
 -- Typescript function to fix all imports
