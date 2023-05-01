@@ -16,6 +16,7 @@ alias less='bat --decorations never'
 alias vim='nvim'
 alias v='nvim .'
 alias neovimconf='nvim ~/.config/nvim/init.lua'
+alias warmscreen='busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 5000'
 
 # Utils
 alias list_npm_scripts='jq .scripts package.json'
