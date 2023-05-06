@@ -52,7 +52,7 @@ return require("packer").startup(function(use)
 			},
 		},
 		filters = {
-			dotfiles = true,
+			dotfiles = false,
 		},
 	})
 	require("nvim-treesitter.configs").setup({
@@ -87,7 +87,6 @@ return require("packer").startup(function(use)
 			filetype = { enabled = true },
 		},
 		semantic_letters = false,
-		letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 	})
 
 	require("gitsigns").setup()
