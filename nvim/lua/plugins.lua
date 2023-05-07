@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-ts-autotag")
 	use("lewis6991/gitsigns.nvim")
 	use("numToStr/Comment.nvim")
+    use("dnlhc/glance.nvim")
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
@@ -22,6 +23,7 @@ return require("packer").startup(function(use)
 		"nvim-tree/nvim-tree.lua",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
+    use("ThePrimeagen/git-worktree.nvim")
 
 	-- Lsp stuff (loaded in lsp_config)
 	use("williamboman/mason.nvim")
@@ -55,6 +57,7 @@ return require("packer").startup(function(use)
 			dotfiles = false,
 		},
 	})
+    require("glance").setup()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "python", "typescript", "json", "rust", "lua", "go" },
 		sync_install = false,
@@ -91,6 +94,7 @@ return require("packer").startup(function(use)
 
 	require("gitsigns").setup()
 	require("telescope").setup()
+    require("telescope").load_extension("git_worktree")
 	require("Comment").setup()
 	require("nvim-web-devicons").setup()
 	require("lspkind").init({

@@ -28,3 +28,8 @@ vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 
 -- LSP mix remaps
 vim.keymap.set("n", "<leader>fp", "<Cmd>Prettier<CR>")
+
+-- Git worktree extension
+vim.keymap.set("n", "<leader>wt", function()
+	require("telescope").extensions.git_worktree.git_worktrees()
+end)
