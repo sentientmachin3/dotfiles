@@ -25,7 +25,6 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("onsails/lspkind.nvim")
 	use("MunifTanjim/prettier.nvim")
 	use({
 		"hrsh7th/nvim-cmp",
@@ -78,12 +77,11 @@ return require("packer").startup(function(use)
 	require("telescope").setup()
 	require("Comment").setup()
 	require("nvim-web-devicons").setup()
-	require("lspkind").init({
-		mode = "symbol_text",
-		preset = "codicons",
-	})
 	require("nvim-autopairs").setup()
 	require("lspsaga").setup({
 		lightbulb = { enable = false },
+		ui = {
+			border = "rounded",
+		},
 	})
 end)
