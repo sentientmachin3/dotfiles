@@ -7,7 +7,7 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-ts-autotag")
 	use("lewis6991/gitsigns.nvim")
 	use("numToStr/Comment.nvim")
-    use("dnlhc/glance.nvim")
+	use("dnlhc/glance.nvim")
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
@@ -19,11 +19,6 @@ return require("packer").startup(function(use)
 			{ "nvim-lua/plenary.nvim" },
 		},
 	})
-	use({
-		"nvim-tree/nvim-tree.lua",
-		requires = "nvim-tree/nvim-web-devicons",
-	})
-    use("ThePrimeagen/git-worktree.nvim")
 
 	-- Lsp stuff (loaded in lsp_config)
 	use("williamboman/mason.nvim")
@@ -44,20 +39,7 @@ return require("packer").startup(function(use)
 
 	-- Plugins config
 	vim.cmd("colorscheme gruvbox-material")
-	require("nvim-tree").setup({
-		view = {
-			width = vim.go.columns,
-		},
-		actions = {
-			open_file = {
-				quit_on_open = true,
-			},
-		},
-		filters = {
-			dotfiles = false,
-		},
-	})
-    require("glance").setup()
+	require("glance").setup()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "python", "typescript", "json", "rust", "lua", "go" },
 		sync_install = false,
@@ -81,7 +63,7 @@ return require("packer").startup(function(use)
 		highlight_visible = true,
 		icons = {
 			diagnostics = {
-				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+				[vim.diagnostic.severity.ERROR] = { enabled = true },
 				[vim.diagnostic.severity.WARN] = { enabled = false },
 				[vim.diagnostic.severity.INFO] = { enabled = false },
 				[vim.diagnostic.severity.HINT] = { enabled = true },
@@ -94,7 +76,6 @@ return require("packer").startup(function(use)
 
 	require("gitsigns").setup()
 	require("telescope").setup()
-    require("telescope").load_extension("git_worktree")
 	require("Comment").setup()
 	require("nvim-web-devicons").setup()
 	require("lspkind").init({
