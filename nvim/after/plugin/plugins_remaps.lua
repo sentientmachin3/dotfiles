@@ -20,4 +20,4 @@ vim.keymap.set("n", "<A-k>", vim.cmd.BufferNext, opts)
 vim.keymap.set("n", "<A-c>", vim.cmd.BufferClose, opts)
 
 -- LSP mix remaps
-vim.keymap.set("n", "<leader>fp", vim.cmd.Prettier())
+vim.keymap.set("n", "<leader>fp", vim.cmd.Prettier)
