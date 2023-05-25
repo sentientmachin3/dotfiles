@@ -38,7 +38,17 @@ return require("packer").startup(function(use)
 
 	-- Plugins config
 	vim.cmd("colorscheme gruvbox-material")
-	require("glance").setup()
+	require("glance").setup({
+		hooks = {
+			before_open = function(results, open, jump)
+				if #results == 1 then
+					jump(results[1])
+				else
+					open(results)
+				end
+			end,
+		},
+	})
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "python", "typescript", "json", "rust", "lua", "go" },
 		sync_install = false,
