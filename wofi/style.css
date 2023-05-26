@@ -10,52 +10,52 @@
 @define-color selected-bg #535353;
 
 window {
-    opacity: 1;
-    border:  0px;
-    border-radius: 8px;
-    font-family: "sf mono", monospace;
-    font-size: 15px;
-    font-weight: 600;
+  opacity: 1;
+  border: 0px;
+  border-radius: 8px;
+  font-family: "SFMono Nerd Font Mono Medium", monospace;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 #input {
-    border-radius: 8px 8px 0px 0px;
-    border:  0px;
-    padding: 10px;
-    margin: 0px;
-    font-size: 15px;
-    color: @input-text;
-    background-color: @background;
+  border-radius: 8px 8px 0px 0px;
+  border: 0px;
+  padding: 10px;
+  margin: 0px;
+  font-size: 15px;
+  color: @input-text;
+  background-color: @background;
 }
 
 #inner-box {
-	margin: 0px;
-	color: @choice-color;
-	background-color: @background;
+  margin: 0px;
+  color: @choice-color;
+  background-color: @background;
 }
 
 #outer-box {
-	margin: 0px;
-	background-color: @background;
-    border-radius: 10px;
+  margin: 0px;
+  background-color: @background;
+  border-radius: 10px;
 }
 
 #selected {
-	background-color: @selected-bg;
+  background-color: @selected-bg;
 }
 
 #entry {
-	padding: 0px;
-    	margin: 0px;
-	background-color: @background;
+  padding: 0px;
+  margin: 0px;
+  background-color: @background;
 }
 
 #scroll {
-	margin: 5px;
-	background-color: @background;
+  margin: 5px;
+  background-color: @background;
 }
 
 #text {
-	margin: 0px;
-	padding: 2px 2px 2px 10px;
+  margin: 0px;
+  padding: 2px 2px 2px 10px;
 }
