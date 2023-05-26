@@ -1,6 +1,6 @@
 alias top='htop'
 alias g='git status'
-alias uu='yes | yay --noconfirm -Syyu'
+alias uu='yes | yay --noconfirm -Syyu --needed --devel'
 alias lsorphans='sudo pacman -Qdt'
 alias rmorphans='sudo pacman -Rns $(lsorphans| cut -d " " -f 1)'
 
@@ -27,3 +27,4 @@ alias wt='git worktree'
 alias or='cd ~/repos/$(ls ~/repos | fzf)'
 alias ow='cd $(ws)'
 alias git-add-remote-refs='git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"'
+alias open-files='nemo $(ws)'
