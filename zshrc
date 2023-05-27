@@ -116,6 +116,7 @@ fi
 
 # some more aliases
 source ~/.aliases
+source ~/.private_aliases
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
