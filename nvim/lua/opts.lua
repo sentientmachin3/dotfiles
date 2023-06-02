@@ -21,3 +21,4 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noselect'
 vim.opt.swapfile = false
+
