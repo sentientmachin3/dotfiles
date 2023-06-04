@@ -19,16 +19,18 @@ return {
 	},
 	config = function()
 		local lsp = require("lsp-zero").preset({})
-        local function on_lsp_attach(bufnr)
+		local function on_lsp_attach(bufnr)
 			lsp.default_keymaps({ buffer = bufnr })
 			local opts = { buffer = bufnr }
-			vim.keymap.set({ "n" }, "<leader>f", function()
+			vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
+			vim.keymap.set("n", "<leader>f", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)
-        end
+			vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
+		end
 
 		lsp.on_attach(function(_, bufnr)
-            on_lsp_attach(bufnr)
+			on_lsp_attach(bufnr)
 		end)
 		lsp.skip_server_setup({ "tsserver" })
 		lsp.setup()
@@ -48,10 +50,12 @@ return {
 				documentation = cmp.config.window.bordered(),
 			},
 			mapping = {
+				["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-n>"] = cmp.mapping.select_next_item(),
+				["<C-b>"] = cmp.mapping.scroll_docs(-4),
+				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<C-Space>"] = cmp.mapping.complete(),
-				["C-n>"] = cmp_action.luasnip_jump_forward(),
-				["<C-p>"] = cmp_action.luasnip_jump_backward(),
 			},
 		})
 
@@ -71,8 +75,8 @@ return {
 		require("typescript").setup({
 			debug = false,
 			server = lsp.build_options("tsserver", {
-                on_attach= on_lsp_attach
-            }),
+				on_attach = on_lsp_attach,
+			}),
 		})
 	end,
 }
