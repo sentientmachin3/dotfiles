@@ -40,7 +40,7 @@ input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
 }
 
 # particular windows configurations
-assign [class="Spotify"] workspace 0
+assign [class="Spotify"] workspace 10
 
 input * xkb_options compose:rwin
 # Keybindings
