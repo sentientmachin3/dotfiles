@@ -27,6 +27,9 @@ output "*" bg /usr/share/backgrounds/cthulhu.jpg fill
 output eDP-1 resolution 1920x1080 position 2560,0
 output DP-2 resolution 2560x1440 position 0,0
 exec_always wl-gammarelay-rs run
+exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
 
 # Input configuration
 input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
@@ -39,7 +42,7 @@ input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
 # particular windows configurations
 assign [class="Spotify"] workspace 0
 
-   input * xkb_options compose:rwin
+input * xkb_options compose:rwin
 # Keybindings
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
