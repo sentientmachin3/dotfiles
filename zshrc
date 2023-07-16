@@ -121,6 +121,7 @@ source ~/.private_aliases
 export PATH="$PATH:$HOME/.local/bin"
 export NODE_PATH="$HOME/.nvm/versions/node/v14.19.1/lib/node_modules"
 export QT_QPA_PLATFORM=xcb
+export GPG_TTY=$(tty)
 
 source /usr/share/nvm/init-nvm.sh
 
