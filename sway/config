@@ -24,8 +24,8 @@ gaps outer 10px
 
 # Outputs
 output "*" bg /usr/share/backgrounds/cthulhu.jpg fill
-output eDP-1 resolution 1920x1080 position 2560,0
-output DP-2 resolution 2560x1440 position 0,0
+output eDP-1 resolution 1920x1080 position 0,0
+output DP-2 resolution 2560x1440 position 1920,0
 exec_always wl-gammarelay-rs run
 exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
 bindswitch --reload --locked lid:on output eDP-1 disable
