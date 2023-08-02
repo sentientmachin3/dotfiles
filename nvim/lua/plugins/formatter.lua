@@ -9,6 +9,9 @@ return {
                 },
                 typescript = {
                     filetypes.typescript.prettierd
+                },
+                typescriptreact = {
+                    filetypes.typescript.prettierd
                 }
             }
         })
