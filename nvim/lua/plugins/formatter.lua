@@ -5,15 +5,21 @@ return {
         require("formatter").setup({
             filetype = {
                 lua = {
-                    filetypes.lua.stylua
+                    filetypes.lua.stylua,
                 },
                 typescript = {
-                    filetypes.typescript.prettierd
+                    filetypes.typescript.prettierd,
+                },
+                css = {
+                    filetypes.typescript.prettierd,
                 },
                 typescriptreact = {
-                    filetypes.typescript.prettierd
-                }
-            }
+                    filetypes.typescript.prettierd,
+                },
+                ["*"] = {
+                    vim.lsp.buf.format,
+                },
+            },
         })
-    end
+    end,
 }
