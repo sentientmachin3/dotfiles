@@ -10,7 +10,13 @@ vim.keymap.set("n", "<A-h>", vim.cmd.TablineBufferPrevious)
 vim.keymap.set("n", "<A-c>", vim.cmd.bd)
 
 -- Oil
-vim.keymap.set("n", "<leader>e", vim.cmd.Oil)
+vim.keymap.set("n", "<leader>e", function()
+	if vim.bo.filetype == "oil" then
+		require("oil").close()
+	else
+		require("oil").open()
+	end
+end)
 
 --Trouble
 vim.keymap.set("n", "<leader>i", "<cmd>TroubleToggle document_diagnostics<cr>")
