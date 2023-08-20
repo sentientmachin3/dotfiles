@@ -9,8 +9,8 @@ vim.keymap.set("n", "<A-l>", vim.cmd.TablineBufferNext)
 vim.keymap.set("n", "<A-h>", vim.cmd.TablineBufferPrevious)
 vim.keymap.set("n", "<A-c>", vim.cmd.bd)
 
--- NvimTree
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+-- Oil
+vim.keymap.set("n", "<leader>e", vim.cmd.Oil)
 
 --Trouble
 vim.keymap.set("n", "<leader>i", "<cmd>TroubleToggle document_diagnostics<cr>")

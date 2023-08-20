@@ -60,7 +60,6 @@ return {
         require("typescript-tools").setup({
             on_attach = on_lsp_attach,
             settings = {
-                separate_diagnostic_server = false,
                 publish_diagnostic_on = "insert_leave",
                 expose_as_code_action = { "fix_all", "add_missing_imports", "remove_unused" },
             },
