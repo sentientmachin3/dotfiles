@@ -125,3 +125,10 @@ export GPG_TTY=$(tty)
 
 source /usr/share/nvm/init-nvm.sh
 
+
+# bun completions
+[ -s "/home/sentientmachine/.bun/_bun" ] && source "/home/sentientmachine/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
