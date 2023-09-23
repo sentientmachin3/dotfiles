@@ -1,12 +1,13 @@
 {
   "height": 25,
+  "layer": "top",
   "spacing": 5,
   "modules-left": [
-    "sway/workspaces",
+    "hyprland/workspaces",
     "custom/media"
   ],
   "modules-center": [
-    "sway/window"
+    "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio",
@@ -16,6 +17,9 @@
     "tray",
     "clock"
   ],
+  "hyprland/window": {
+      "max-length": 70
+  },
   "keyboard-state": {
     "format": "{name}"
   },
@@ -55,7 +59,7 @@
     "format-source-muted": "",
     "on-click": "pavucontrol"
   },
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
     "persistent-workspaces": {
