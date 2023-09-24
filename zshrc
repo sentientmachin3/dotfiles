@@ -8,7 +8,7 @@ setopt promptsubst         # enable command substitution in prompt
 
 # hide EOL sign ('%')
 export PROMPT_EOL_MARK=""
-export LS_COLORS="$(vivid generate gruvbox-dark)"
+export LS_COLORS="$(vivid generate catppuccin-frappe)"
 
 # Keybindings
 bindkey -e

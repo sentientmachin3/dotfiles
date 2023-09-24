@@ -8,7 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty zellij
+set $term kitty tmux
 set $menu wofi --show drun exec --
 
 # Fonts
@@ -19,13 +19,11 @@ titlebar_padding 1
 titlebar_border_thickness 1
 default_border none
 default_floating_border none
-gaps inner 5px
-gaps outer 10px
 
 # Outputs
 output "*" bg /usr/share/backgrounds/cthulhu.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
-output DP-2 resolution 2560x1440 position 1920,0
+output DP-3 resolution 2560x1440 position 1920,0
 exec_always wl-gammarelay-rs run
 exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
 bindswitch --reload --locked lid:on output eDP-1 disable
@@ -42,14 +40,14 @@ input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
 # particular windows configurations
 assign [class="Spotify"] workspace 10
 
-input * xkb_options compose:rwin
+input * xkb_options compose:ralt
 # Keybindings
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec $HOME/.config/wofi/powermenu.sh
+bindsym $mod+Shift+e exec $HOME/.config/sway/powermenu.sh
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 bindsym $mod+$up workspace next
