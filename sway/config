@@ -17,8 +17,9 @@ font pango:sf mono 1
 # Window Borders
 titlebar_padding 1
 titlebar_border_thickness 1
-default_border none
+default_border pixel 1
 default_floating_border none
+hide_edge_borders --i3 smart
 
 # Outputs
 output "*" bg /usr/share/backgrounds/cthulhu.jpg fill
@@ -87,9 +88,6 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
 bindsym Print exec grim
 bindsym Shift+Print exec grim -g "$(slurp)"
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -99,22 +97,8 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3
 
-mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
-
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
 bar { 
      swaybar_command waybar
 }
+
 include /etc/sway/config.d/*
