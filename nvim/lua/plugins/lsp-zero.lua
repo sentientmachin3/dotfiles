@@ -23,7 +23,9 @@ return {
             local opts = { buffer = bufnr }
             lsp.default_keymaps(opts)
             vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
-            vim.keymap.set("n", "<leader>f", vim.cmd.Format)
+            vim.keymap.set("n", "<leader>f", function ()
+               require('conform').format() 
+            end)
             vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
         end
 
