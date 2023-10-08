@@ -8,6 +8,7 @@ return {
 				javascript = { { "prettierd" } },
 				typescript = { { "prettierd" } },
 				typescriptreact = { { "prettierd" } },
+				go = { { "gofumpt" } },
 			},
 		})
 	end,

@@ -4,7 +4,9 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("everforest").setup({})
+		require("everforest").setup({
+			disable_italic_comments = true,
+		})
 		require("everforest").load()
 	end,
 }

@@ -11,14 +11,13 @@ vim.opt.scrolloff = 8
 vim.opt.wrap = false
 vim.o.hlsearch = false
 vim.wo.number = true
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 vim.o.termguicolors = true
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"
 vim.opt.swapfile = false
-
