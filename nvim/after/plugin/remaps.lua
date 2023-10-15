@@ -33,3 +33,6 @@ end)
 
 --Trouble
 vim.keymap.set("n", "<leader>i", "<cmd>TroubleToggle document_diagnostics<cr>")
+
+-- Typescript organize/sort imports
+vim.keymap.set("n", "<leader>o", "<cmd>TSToolsOrganizeImports<cr>")
