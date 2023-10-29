@@ -10,5 +10,5 @@ rm -rf ./tmux/plugins
 cp ~/.zshrc ./zshrc
 cp ~/.aliases ./aliases
 cp ~/.zprofile ./zprofile
-cp -r ~/.config/nvim .
+rm -rf ./nvim && cp -r ~/.config/nvim .
 cp ~/.tmux.conf ./tmux.conf
