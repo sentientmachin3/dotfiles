@@ -7,5 +7,5 @@ return {
 				theme = "everforest",
 			},
 		})
-	end
+	end,
 }

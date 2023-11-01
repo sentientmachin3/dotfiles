@@ -13,9 +13,9 @@ window {
   opacity: 1;
   border: 0px;
   border-radius: 8px;
-  font-family: "SFMono Nerd Font Mono Medium", monospace;
-  font-size: 15px;
-  font-weight: 600;
+  font-family: "Hack Nerd Font Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 #input {

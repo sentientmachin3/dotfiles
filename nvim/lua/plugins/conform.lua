@@ -7,6 +7,7 @@ return {
 				python = { "isort", "black" },
 				javascript = { { "prettierd" } },
 				typescript = { { "prettierd" } },
+				html = { { "prettierd" } },
 				typescriptreact = { { "prettierd" } },
 				go = { { "gofumpt" } },
 			},
