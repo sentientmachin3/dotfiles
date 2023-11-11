@@ -32,7 +32,14 @@ vim.keymap.set("n", "<leader>e", function()
 end)
 
 --Trouble
-vim.keymap.set("n", "<leader>i", "<cmd>TroubleToggle document_diagnostics<cr>")
+vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle document_diagnostics<cr>")
 
 -- Typescript organize/sort imports
-vim.keymap.set("n", "<leader>o", "<cmd>TSToolsOrganizeImports<cr>")
+vim.keymap.set("n", "<leader>i", "<cmd>TSToolsOrganizeImports<cr>")
+
+-- Symbols outline
+vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
+
+-- Gitsigns
+vim.keymap.set("n", "[c", "<cmd>Gitsigns prev_hunk<cr>")
+vim.keymap.set("n", "]c", "<cmd>Gitsigns prev_hunk<cr>")
