@@ -13,7 +13,6 @@ alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200
 alias gl='git log --oneline'
 alias less='bat --decorations never'
 alias vim='nvim'
-alias warmscreen='busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 5000'
 
 # Utils
 alias list_npm_scripts='jq .scripts package.json'
@@ -21,6 +20,6 @@ alias task='go-task'
 alias docker-stop-all='docker stop $(docker ps -aq)'
 alias docker-rm-all='docker rm $(docker ps -aq)'
 alias or='cd ~/repos/$(ls ~/repos | fzf) && git fetch -Ppaf'
-alias ow='cd $(ws)'
+alias ow='cd $(open_worktree.sh)'
 alias git-add-remote-refs='git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"'
 alias hr='$(history | cut -c 8- | fzf)'
