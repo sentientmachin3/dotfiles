@@ -5,7 +5,7 @@ alias lsorphans='sudo pacman -Qdt'
 alias rmorphans='sudo pacman -Rns $(lsorphans| cut -d " " -f 1)'
 
 # List aliases
-alias l='ls -hAlo'
+alias l='ls -1'
 alias ll='ls -hol'
 alias la='ls -aA'
 alias df='df -h'

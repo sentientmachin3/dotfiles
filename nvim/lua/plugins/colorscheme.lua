@@ -1,12 +1,9 @@
 return {
-	"neanias/everforest-nvim",
+	"sainnhe/gruvbox-material",
 	version = false,
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("everforest").setup({
-			disable_italic_comments = true,
-		})
-		require("everforest").load()
+		vim.cmd("colorscheme gruvbox-material")
 	end,
 }
