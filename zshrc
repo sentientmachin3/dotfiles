@@ -8,8 +8,11 @@ setopt promptsubst         # enable command substitution in prompt
 
 # hide EOL sign ('%')
 export PROMPT_EOL_MARK=""
-# export LS_COLORS="$(vivid generate solarized-dark)"
 export LS_COLORS='di=38;5;39:fi=38;5;15:ln=38;5;74:pi=38;5;180:so=38;5;187:bd=38;5;35:cd=38;5;180:or=38;5;222:mi=38;5;222:su=38;5;222:sg=38;5;222:tw=38;5;222:ow=38;5;222:st=38;5;222:ex=38;5;160:*.cmd=38;5;222:*.exe=38;5;160:*.com=38;5;160:*.bat=38;5;160:*.sh=38;5;222:*.c=38;5;222:*.cpp=38;5;222:*.dll=38;5;160:*.tar=38;5;160:*.dbx=38;5;160:*.rpm=38;5;160:*.deb=38;5;160:*.arj=38;5;160:*.z=38;5;160:*.Z=38;5;160:*.gz=38;5;160:*.tgz=38;5;160:*.bz2=38;5;160:*.tz=38;5;160:*.rpm=38;5;160:*.jpg=38;5;222:*.jpeg=38;5;222:*.gif=38;5;222:*.bmp=38;5;222:*.pbm=38;5;222:*.pgm=38;5;222:*.ppm=38;5;222:*.tga=38;5;222:*.xbm=38;5;222:*.xpm=38;5;222:*.tif=38;5;222:*.tiff=38;5;222:*.png=38;5;222:*.svg=38;5;222:*.mp3=38;5;222:*.wav=38;5;222:*.ogg=38;5;222:*.oga=38;5;222:*.flac=38;5;222:*.mpg=38;5;222:*.mpeg=38;5;222:*.avi=38;5;222:*.mkv=38;5;222:*.divx=38;5;222:*.mov=38;5;222:*.wmv=38;5;222:*.mp4=38;5;222:*.m4v=38;5;222:*.mpg=38;5;222:*.mpeg=38;5;222:*.asf=38;5;222:*.flv=38;5;222:*.wmv=38;5;222:*.srt=38;5;222:*.ssa=38;5;222:*.ass=38;5;222:'
+
+# custom widget
+open_wt_tmux() { open-worktree.sh | tmux-worktree.sh }
+zle -N open_wt_tmux
 
 
 # Keybindings
@@ -19,6 +22,7 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[3~"	delete-char
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
+bindkey  "^F"   open_wt_tmux
 
 # enable completion features
 autoload -Uz compinit
@@ -126,11 +130,3 @@ export QT_QPA_PLATFORM=xcb
 export GPG_TTY=$(tty)
 
 source /usr/share/nvm/init-nvm.sh
-
-
-# bun completions
-[ -s "/home/sentientmachine/.bun/_bun" ] && source "/home/sentientmachine/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
