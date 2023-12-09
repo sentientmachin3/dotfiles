@@ -1,3 +1,9 @@
+-- Globals for gruvbox material
+vim.g.gruvbox_material_foreground = "material"
+vim.g.gruvbox_material_background = "medium"
+vim.g.gruvbox_material_enable_italic = 0
+vim.g.gruvbox_material_disable_italic_comment = 1
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({

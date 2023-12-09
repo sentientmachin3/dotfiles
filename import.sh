@@ -6,7 +6,7 @@ cp -R ~/.config/wofi ./
 cp -R ~/.config/kitty ./
 cp -R ~/.config/dunst ./
 cp -R ~/.config/scripts ./
-rm -rf ./tmux && mkdir tmux && cp ~/.tmux/theme.conf ./tmux && cp -r ~/.tmux/scripts ./tmux/
+rm -rf ./tmux && mkdir tmux && cp -r ~/.tmux/* ./tmux
 rm -rf ./tmux/plugins
 cp ~/.zshrc ./zshrc
 cp ~/.aliases ./aliases
