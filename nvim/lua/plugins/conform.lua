@@ -11,6 +11,7 @@ return {
 				css = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				go = { "gofumpt" },
+				markdown = { "prettierd" },
 			},
 		})
 	end,

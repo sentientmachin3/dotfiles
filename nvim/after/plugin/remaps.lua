@@ -35,7 +35,7 @@ end)
 vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle document_diagnostics<cr>")
 
 -- Typescript organize/sort imports
-vim.keymap.set("n", "<leader>i", "<cmd>TSToolsOrganizeImports<cr>")
+vim.keymap.set("n", "<leader>s", "<cmd>TSToolsOrganizeImports<cr>")
 
 -- Symbols outline
 vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
