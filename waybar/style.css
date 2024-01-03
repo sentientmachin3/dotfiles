@@ -5,10 +5,10 @@
 }
 
 window#waybar {
-  background-color: rgba(40, 40, 40, 0.5);
+  background-color: rgba(27, 27, 27, 0.8);
   color: #ffffff;
   transition-property: background-color;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -16,7 +16,7 @@ window#waybar.hidden {
 }
 
 window#waybar.termite {
-  background-color: #3F3F3F;
+  background-color: #32302f;
 }
 
 #workspaces button {
@@ -37,11 +37,11 @@ window#waybar.termite {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: #ea6962;
 }
 
 #mode {
-  background-color: #64727D;
+  background-color: #64727d;
   border-bottom: 3px solid #ffffff;
 }
 
@@ -53,7 +53,7 @@ window#waybar.termite {
 #tray {
   padding: 0 10px;
   color: #ffffff;
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  border-bottom: 3px solid #45403d;
 }
 
 #window,
@@ -62,16 +62,16 @@ window#waybar.termite {
   font-weight: 600;
 }
 
-.modules-left>widget:first-child>#workspaces {
+.modules-left > widget:first-child > #workspaces {
   margin-left: 0;
 }
 
-.modules-right>widget:last-child>#workspaces {
+.modules-right > widget:last-child > #workspaces {
   margin-right: 0;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
+  background-color: #ea6962;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -80,13 +80,13 @@ window#waybar.termite {
   animation-direction: alternate;
 }
 
-#tray>.passive {
+#tray > .passive {
   -gtk-icon-effect: dim;
 }
 
-#tray>.needs-attention {
+#tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  background-color: #ea6962;
 }
 
 #keyboard-state {
@@ -95,6 +95,6 @@ window#waybar.termite {
   min-width: 16px;
 }
 
-#keyboard-state>label {
+#keyboard-state > label {
   padding: 0 5px;
 }

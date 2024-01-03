@@ -4,10 +4,10 @@
 * Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 *
 */
-@define-color background #202020
-@define-color input-text #C2C2C2;
-@define-color choice-color #BABABA;
-@define-color selected-bg #535353;
+@define-color background #32302F
+@define-color input-text #DDC7A1;
+@define-color choice-color #D4BE98;
+@define-color selected-bg #504945;
 
 window {
   opacity: 1;
