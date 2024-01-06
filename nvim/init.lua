@@ -23,10 +23,10 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 })
 
 require("remaps")
-require("utils")
+require("ui")
 
 if vim.g.vscode then
 else
 	require("opts")
-	require("lazy").setup("plugins")
+	require("lazy").setup({ spec = "plugins", change_detection = { notify = false } })
 end
