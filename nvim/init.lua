@@ -24,7 +24,6 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 require("remaps")
 require("ui")
-
 if vim.g.vscode then
 else
 	require("opts")

@@ -19,7 +19,7 @@ return {
 	},
 	config = function()
 		local lsp = require("lsp-zero").preset({})
-		local function on_lsp_attach(client, bufnr)
+		local function on_lsp_attach(_, bufnr)
 			local opts = { buffer = bufnr }
 			lsp.default_keymaps(opts)
 			vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
@@ -27,6 +27,7 @@ return {
 				require("conform").format()
 			end)
 			vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
+			vim.keymap.set("i", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 		end
 
 		lsp.on_attach(function(client, bufnr)
@@ -37,7 +38,6 @@ return {
 		-- Snippets config
 		local cmp = require("cmp")
 		require("lsp-zero").cmp_action()
-
 		cmp.setup({
 			snippet = {
 				expand = function(args)
