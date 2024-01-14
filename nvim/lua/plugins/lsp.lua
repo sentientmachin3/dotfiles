@@ -1,0 +1,155 @@
+local function on_lsp_attach(_, bufnr)
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
+	vim.keymap.set("n", "<leader>f", function()
+		require("conform").format()
+	end)
+	vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
+	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+end
+
+local function setup_cmp()
+	local cmp = require("cmp")
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				require("luasnip").lsp_expand(args.body)
+			end,
+		},
+		window = {
+			documentation = cmp.config.window.bordered(),
+			completion = cmp.config.window.bordered(),
+		},
+		mapping = {
+			["<C-p>"] = cmp.mapping.select_prev_item(),
+			["<C-n>"] = cmp.mapping.select_next_item(),
+			["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<CR>"] = cmp.mapping.confirm({ select = false }),
+			["<C-Space>"] = cmp.mapping.complete(),
+		},
+		sources = cmp.config.sources({
+			{ name = "nvim_lsp" },
+		}, {
+			{ name = "buffer" },
+		}),
+	})
+end
+
+local function setup_formatters()
+	require("conform").setup({
+		formatters_by_ft = {
+			lua = { "stylua" },
+			python = { "isort", "black" },
+			javascript = { "prettierd" },
+			typescript = { "prettierd" },
+			html = { "prettierd" },
+			css = { "prettierd" },
+			scss = { "prettierd" },
+			typescriptreact = { "prettierd" },
+			go = { "gofumpt" },
+			markdown = { "prettierd" },
+		},
+	})
+end
+
+local function setup_linters()
+	require("lint").linters_by_ft = {
+		typescript = { "eslint_d" },
+		typescriptreact = { "eslint_d" },
+		lua = { "luacheck" },
+	}
+end
+
+local function get_capabilities()
+	return vim.tbl_extend(
+		"force",
+		{},
+		vim.lsp.protocol.make_client_capabilities(),
+		require("cmp_nvim_lsp").default_capabilities()
+	)
+end
+
+local function default_handler(server_name)
+	require("lspconfig")[server_name].setup({
+		on_attach = on_lsp_attach,
+		capabilities = get_capabilities(),
+	})
+end
+
+local handlers = {
+	default_handler,
+	["lua_ls"] = function()
+		require("lspconfig").lua_ls.setup({
+			on_attach = on_lsp_attach,
+			capabilities = get_capabilities(),
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
+		})
+	end,
+}
+
+local dependencies = {
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lua/plenary.nvim",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"pmizio/typescript-tools.nvim",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"L3MON4D3/LuaSnip",
+	"simrat39/symbols-outline.nvim",
+	"stevearc/conform.nvim",
+	"mfussenegger/nvim-lint",
+	"j-hui/fidget.nvim",
+	"folke/trouble.nvim",
+}
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = dependencies,
+	config = function()
+		require("mason").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"lua_ls",
+			},
+			handlers = handlers,
+		})
+		-- For custom typescript setup
+		require("typescript-tools").setup({
+			on_attach = on_lsp_attach,
+			settings = {
+				publish_diagnostic_on = "insert_leave",
+				expose_as_code_action = { "add_missing_imports" },
+			},
+			capabilities = get_capabilities(),
+		})
+		require("fidget").setup()
+		setup_cmp()
+		setup_formatters()
+		setup_linters()
+
+		-- Diagnostics
+		vim.diagnostic.config({
+			update_in_insert = true,
+			virtual_text = true,
+			float = {
+				border = "rounded",
+			},
+		})
+	end,
+}
