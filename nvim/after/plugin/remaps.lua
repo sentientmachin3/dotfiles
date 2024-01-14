@@ -23,7 +23,7 @@ vim.keymap.set("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
 vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 
 -- Oil
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<leader>-", function()
 	if vim.bo.filetype == "oil" then
 		require("oil").close()
 	else

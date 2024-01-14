@@ -9,6 +9,7 @@ return {
 				typescript = { "prettierd" },
 				html = { "prettierd" },
 				css = { "prettierd" },
+				scss = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				go = { "gofumpt" },
 				markdown = { "prettierd" },
