@@ -65,6 +65,11 @@ local function setup_linters()
 		typescriptreact = { "eslint_d" },
 		lua = { "luacheck" },
 	}
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		callback = function()
+			require("lint").try_lint()
+		end,
+	})
 end
 
 local function get_capabilities()

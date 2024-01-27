@@ -1,9 +1,3 @@
--- Globals for gruvbox material
-vim.g.gruvbox_material_foreground = "material"
-vim.g.gruvbox_material_background = "medium"
-vim.g.gruvbox_material_enable_italic = 0
-vim.g.gruvbox_material_disable_italic_comment = 1
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -16,16 +10,18 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
-})
 
+local function setup_gruvbox()
+	vim.g.gruvbox_material_foreground = "original"
+	vim.g.gruvbox_material_background = "medium"
+	vim.g.gruvbox_material_enable_italic = 0
+	vim.g.gruvbox_material_disable_italic_comment = 1
+end
+
+setup_gruvbox()
 require("remaps")
 require("ui")
-if vim.g.vscode then
-else
+if not vim.g.vscode then
 	require("opts")
 	require("lazy").setup({ spec = "plugins", change_detection = { notify = false } })
 end

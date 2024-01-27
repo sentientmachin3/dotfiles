@@ -93,8 +93,6 @@ precmd() {
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(env TERM=xterm-256color dircolors -b)"
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -119,7 +117,5 @@ source ~/.aliases
 source ~/.private_aliases
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/.config/scripts:$HOME/go/bin"
-export NODE_PATH="$HOME/.nvm/versions/node/v14.19.1/lib/node_modules"
 export GPG_TTY=$(tty)
 
-source /usr/share/nvm/init-nvm.sh
