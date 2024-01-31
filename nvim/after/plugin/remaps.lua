@@ -34,3 +34,4 @@ vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 -- Gitsigns
 vim.keymap.set("n", "[c", "<cmd>Gitsigns prev_hunk<cr>")
 vim.keymap.set("n", "]c", "<cmd>Gitsigns prev_hunk<cr>")
+vim.keymap.set("n", "<C-b>", "<cmd>Gitsigns toggle_current_line_blame<cr>")

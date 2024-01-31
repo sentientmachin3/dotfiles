@@ -48,6 +48,8 @@ local function setup_formatters()
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettierd" },
+			json = { "prettierd" },
+			jsonc = { "prettierd" },
 			typescript = { "prettierd" },
 			html = { "prettierd" },
 			css = { "prettierd" },
@@ -63,7 +65,7 @@ local function setup_linters()
 	require("lint").linters_by_ft = {
 		typescript = { "eslint_d" },
 		typescriptreact = { "eslint_d" },
-		lua = { "luacheck" },
+		json = { "eslint_d" },
 	}
 	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 		callback = function()
@@ -147,6 +149,8 @@ return {
 		setup_cmp()
 		setup_formatters()
 		setup_linters()
+
+		require("symbols-outline").setup()
 
 		-- Diagnostics
 		vim.diagnostic.config({
