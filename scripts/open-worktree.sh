@@ -12,5 +12,5 @@ for repo in $repos; do
     fi
 done
 
-selected=$(printf '%s\n' "${worktrees[@]}" | fzf)
+selected=$(printf '%s\n' "${worktrees[@]}" | fzf --cycle)
 echo $HOME/repos/$selected
