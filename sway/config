@@ -8,7 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty tmux
+set $term alacritty -e tmux
 set $menu wofi --show drun exec --
 
 # Fonts
@@ -31,7 +31,7 @@ bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
 
 # Input configuration
-input "1739:30385:DLL0945:00_06CB:76B1_Touchpad" {
+input "type:touchpad" {
    dwt enabled
    tap enabled 
    natural_scroll enabled

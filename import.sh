@@ -3,7 +3,7 @@
 cp -R ~/.config/sway/ ./
 cp -R ~/.config/waybar ./
 cp -R ~/.config/wofi ./
-cp -R ~/.config/kitty ./
+cp -R ~/.config/alacritty ./
 cp -R ~/.config/dunst ./
 cp -R ~/.config/scripts ./
 rm -rf ./tmux && mkdir tmux && cp -r ~/.tmux/* ./tmux
