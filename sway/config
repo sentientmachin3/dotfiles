@@ -22,7 +22,7 @@ default_floating_border none
 hide_edge_borders --i3 smart
 
 # Outputs
-output "*" bg /usr/share/backgrounds/forest.jpg fill
+output "*" bg /usr/share/backgrounds/bg.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
 exec_always gammastep -O 4500
