@@ -35,3 +35,6 @@ vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 vim.keymap.set("n", "[c", "<cmd>Gitsigns prev_hunk<cr>")
 vim.keymap.set("n", "]c", "<cmd>Gitsigns prev_hunk<cr>")
 vim.keymap.set("n", "<C-b>", "<cmd>Gitsigns toggle_current_line_blame<cr>")
+
+-- Terminal
+vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")

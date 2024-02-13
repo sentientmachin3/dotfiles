@@ -16,7 +16,8 @@ shape = "Block"
 size = 14.0
 
 [font.normal]
-family = "Iosevka Fixed SS04 Md Ex"
+# family = "Iosevka Fixed SS04 Md Ex"
+family = "JetBrainsMono NF"
 
 [scrolling]
 history = 4000
