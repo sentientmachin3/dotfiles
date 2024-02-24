@@ -116,6 +116,6 @@ fi
 source ~/.aliases
 source ~/.private_aliases
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/.config/scripts:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 export GPG_TTY=$(tty)
 
