@@ -22,3 +22,5 @@ To make it work you just need to install the Lazy plugin manager and you are goo
 - tmux: [gruvbox](https://github.com/egel/tmux-gruvbox)
 - neovim: [gruvbox-material](https://github.com/sainnhe/gruvbox-material)
 - wayland and sway are custom
+
+**Note: some aliases require shdevkit to execute**
