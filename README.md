@@ -14,7 +14,7 @@ following the tree laid out in this directory.
 
 ## Neovim setup
 
-Neovim is configured to behave similarly to VSCode.
+Neovim is configured to behave "similarly" to VSC***.
 To make it work you just need to install the Lazy plugin manager and you are good to go.
 
 ## Color themes
@@ -23,4 +23,4 @@ To make it work you just need to install the Lazy plugin manager and you are goo
 - neovim: [gruvbox-material](https://github.com/sainnhe/gruvbox-material)
 - wayland and sway are custom
 
-**Note: some aliases require shdevkit to execute**
+**Note: some aliases require [shdevkit](https://github.com/sentientmachin3/shdevkit) to execute**
