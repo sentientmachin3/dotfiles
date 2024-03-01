@@ -106,6 +106,26 @@ local handlers = {
 			},
 		})
 	end,
+	["tsserver"] = function()
+		local function organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+				title = "",
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+		require("lspconfig").tsserver.setup({
+			on_attach = on_lsp_attach,
+			capabilities = get_capabilities(),
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
+		})
+	end,
 }
 
 local dependencies = {
@@ -113,7 +133,6 @@ local dependencies = {
 	"nvim-lua/plenary.nvim",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"pmizio/typescript-tools.nvim",
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
 	"L3MON4D3/LuaSnip",
@@ -137,15 +156,6 @@ return {
 				"lua_ls",
 			},
 			handlers = handlers,
-		})
-		-- For custom typescript setup
-		require("typescript-tools").setup({
-			on_attach = on_lsp_attach,
-			settings = {
-				publish_diagnostic_on = "insert_leave",
-				expose_as_code_action = { "add_missing_imports" },
-			},
-			capabilities = get_capabilities(),
 		})
 		require("fidget").setup()
 		setup_cmp()

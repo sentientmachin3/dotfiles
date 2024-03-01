@@ -13,11 +13,10 @@ blinking = "Off"
 shape = "Block"
 
 [font]
-size = 13.0
+size = 14.0
 
 [font.normal]
-# family = "Iosevka Fixed SS04 Md Ex"
-family = "JetBrainsMono NF"
+family = "Berkeley Mono"
 
 [scrolling]
 history = 4000
