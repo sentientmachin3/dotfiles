@@ -2,7 +2,7 @@ local function on_lsp_attach(_, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
 	vim.keymap.set("n", "<leader>f", function()
-		require("conform").format()
+		require("conform").format({ lsp_fallback = true })
 	end)
 	vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
