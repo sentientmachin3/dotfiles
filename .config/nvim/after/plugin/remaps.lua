@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>sf", builtins.git_files, {})
 vim.keymap.set("n", "<leader>af", builtins.find_files, {})
 vim.keymap.set("n", "<leader>sg", builtins.live_grep, {})
 vim.keymap.set("n", "<leader>lk", builtins.keymaps, {})
+vim.keymap.set("n", "<C-b>", builtins.buffers, {})
 
 -- Barbar
 local opts = { noremap = true, silent = true }
@@ -32,8 +33,8 @@ vim.keymap.set("n", "<leader>s", "<cmd>OrganizeImports<cr>")
 vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 
 -- Gitsigns
-vim.keymap.set("n", "<C-h>", "<cmd>Gitsigns setqflist<cr>")
-vim.keymap.set("n", "<C-b>", "<cmd>Gitsigns toggle_current_line_blame<cr>")
+vim.keymap.set("n", "<C-y>", "<cmd>Gitsigns setqflist<cr>")
+vim.keymap.set("n", "<cmd>blame<cr>", "<cmd>Gitsigns toggle_current_line_blame<cr>")
 
 -- Terminal
 vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")
