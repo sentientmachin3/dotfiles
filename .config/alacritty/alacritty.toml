@@ -1,4 +1,6 @@
 live_config_reload = true
+[window]
+dynamic_padding = true
 
 
 [colors.primary]
@@ -13,7 +15,7 @@ blinking = "Off"
 shape = "Block"
 
 [font]
-size = 14.0
+size = 14.2
 
 [font.normal]
 family = "Berkeley Mono"
