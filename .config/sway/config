@@ -8,7 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty -e tmux
+set $term wezterm
 set $menu wofi --show drun exec --
 
 # Fonts

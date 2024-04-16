@@ -15,10 +15,11 @@ blinking = "Off"
 shape = "Block"
 
 [font]
-size = 14.2
+size = 14.0
 
 [font.normal]
-family = "Berkeley Mono"
+# family = "Berkeley Mono"
+family = "JetbrainsMonoNerd Font Mono"
 
 [scrolling]
 history = 4000
