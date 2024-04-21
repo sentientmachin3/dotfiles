@@ -118,4 +118,4 @@ source ~/.private_aliases
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 export GPG_TTY=$(tty)
-
+eval "$(fnm env)"

@@ -41,8 +41,9 @@ input "type:touchpad" {
 # particular windows configurations
 assign [class="Spotify"] workspace 10
 
-input * xkb_options compose:ralt
+input * xkb_options compose:lwin
 # Keybindings
+bindsym Mod1 -right_alt
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
