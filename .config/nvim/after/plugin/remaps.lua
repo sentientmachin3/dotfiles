@@ -2,9 +2,7 @@
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>")
 
 local builtins = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", function()
-	builtins.git_files({ previewer = false })
-end, {})
+vim.keymap.set("n", "<leader>sf", builtins.git_files, {})
 vim.keymap.set("n", "<leader>af", builtins.find_files, {})
 vim.keymap.set("n", "<leader>sg", builtins.live_grep, {})
 vim.keymap.set("n", "<leader>lk", builtins.keymaps, {})
@@ -36,7 +34,6 @@ vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 
 -- Gitsigns
 vim.keymap.set("n", "<C-y>", "<cmd>Gitsigns setqflist<cr>")
-vim.keymap.set("n", "<cmd>blame<cr>", "<cmd>Gitsigns toggle_current_line_blame<cr>")
 
--- Terminal
-vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")
+--Undotree
+vim.keymap.set("n", "<leader>u", "<cmd>lua require('undotree').toggle()<cr>")
