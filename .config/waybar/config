@@ -12,7 +12,6 @@
   "modules-right": [
     "pulseaudio",
     "network",
-    "keyboard-state",
     "battery",
     "tray",
     "clock"
@@ -20,56 +19,45 @@
   "sway/window": {
       "max-length": 70
   },
-  "keyboard-state": {
-    "format": "{name}"
-  },
   "tray": {
     "spacing": 10
   },
   "clock": {
-    "format": "{:%H:%M   %a, %d %h %Y}"
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": " {percent}%"
+    "format": "{:%H:%M  %a, %d %h %Y}"
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": " {capacity}%",
-    "format-charging": " [CHR] {capacity}%",
-    "format-full": " FULL"
+    "format": "bat [{capacity}%]",
+    "format-charging": "bat [CHR {capacity}%]",
+    "format-full": "bat [FULL]"
   },
   "network": {
-    "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": " {ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-wifi": "{ifname} [{ipaddr}/{cidr}]",
+    "format-ethernet": "eth [{ipaddr}/{cidr}]",
+    "tooltip-format": "gw [{gwaddr}]",
+    "format-linked": "{ifname} [No IP]",
+    "format-disconnected": "[Disconnected]",
+    "format-alt": "{ifname} [{signalStrength}%]"
   },
   "pulseaudio": {
-    "format": " {volume}% {format_source}",
-    "format-bluetooth": " {volume}% {format_source}",
-    "format-bluetooth-muted": " {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format": "  [{volume}%]",
+    "format-muted": " [MUTE]",
+    "format-source": " [{volume}%]",
+    "format-source-muted": "[MUTE]",
     "on-click": "pavucontrol"
   },
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "persistent-workspaces": {
-    }
   },
   "custom/media": {
     "exec": "playerctl metadata --format '{{ artist }} - {{ title }} - {{ album }}'",
     "tooltip": "playerctl metadata --format '{{ artist }} - {{ title }} - {{ album }}'",
     "interval": 15,
-    "max-length": 20,
+    "max-length": 30,
     "on-click": "playerctl play-pause",
     "format": {}
   }
