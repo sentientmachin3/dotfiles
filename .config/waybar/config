@@ -43,10 +43,10 @@
     "format-alt": "{ifname} [{signalStrength}%]"
   },
   "pulseaudio": {
-    "format": "  [{volume}%]",
+    "format": "  [{volume}%] {format_source}",
     "format-muted": " [MUTE]",
     "format-source": " [{volume}%]",
-    "format-source-muted": "[MUTE]",
+    "format-source-muted": " [MUTE]",
     "on-click": "pavucontrol"
   },
   "sway/workspaces": {

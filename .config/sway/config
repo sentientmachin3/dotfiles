@@ -8,7 +8,9 @@ set $down j
 set $up k
 set $right l
 set $term wezterm
-set $menu wofi --show drun exec --
+set $full_menu kickoff
+set $menu kickoff --from-file "$HOME/.config/sway/apps"
+set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
 
 # Fonts
 font pango:sf mono 1
@@ -21,7 +23,7 @@ default_floating_border none
 hide_edge_borders --i3 smart
 
 # Outputs
-output "*" bg /usr/share/backgrounds/bg.jpg fill
+output "*" bg #282828 solid_color
 output eDP-1 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
 exec swayrd &
@@ -39,16 +41,19 @@ input "type:touchpad" {
 }
 
 # particular windows configurations
+assign [app_id="firefox"] workspace 2
 assign [class="Spotify"] workspace 10
+exec firefox
 
 input * xkb_options compose:lwin
 # Keybindings
 bindsym Mod1 -right_alt
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
+bindsym $mod+a exec $full_menu
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec $HOME/.config/sway/powermenu.sh
+bindsym $mod+Shift+e exec $powermenu
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
