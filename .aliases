@@ -5,9 +5,6 @@ alias lsorphans='sudo pacman -Qdt'
 alias rmorphans='sudo pacman -Rns $(lsorphans| cut -d " " -f 1)'
 
 # List aliases
-alias l='ls -1'
-alias ll='ls -hol'
-alias la='ls -aA'
 alias df='df -h'
 alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syyu'
 alias gl='git log --oneline'
@@ -15,11 +12,9 @@ alias less='bat --decorations never'
 alias vim='nvim'
 
 # Utils
-alias list_npm_scripts='jq .scripts package.json'
+alias npmscripts='jq .scripts package.json'
 alias task='go-task'
 alias docker-stop-all='docker stop $(docker ps -aq)'
 alias docker-rm-all='docker rm $(docker ps -aq)'
 alias git-add-remote-refs='git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" && git fetch -Ppaf'
-alias hr='$(history | cut -c 8- | fzf)'
 alias lw='cd $HOME/repos/$(choose-worktree.sh | cut -d";" -f2)'
-alias ww='choose-worktree.sh | windowize-worktree.sh'
