@@ -5,7 +5,7 @@ dynamic_padding = true
 
 [colors.primary]
 background = "0x282828"
-foreground = "0xd4be98"
+foreground = "0xddc7a1"
 
 [cursor]
 vi_mode_style = "None"

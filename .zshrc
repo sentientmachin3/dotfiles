@@ -35,7 +35,7 @@ setopt hist_verify            # show command with history expansion to user befo
 # force zsh to show the complete history
 alias history="history 0"
 
-PROMPT="%F{185}%n@%m %F{230}%~ $ "
+PROMPT="%F{185}%n@%m %~ $ "
 
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
