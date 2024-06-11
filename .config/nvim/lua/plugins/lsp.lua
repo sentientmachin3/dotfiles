@@ -1,5 +1,7 @@
 local function on_lsp_attach(_, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set("n", "<leader>s", "<cmd>OrganizeImports<cr>")
+	vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>")
 	vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
 	vim.keymap.set("n", "<leader>f", function()
 		require("conform").format({ lsp_fallback = true })

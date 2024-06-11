@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term wezterm
+set $term alacritty -e tmux
 set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"

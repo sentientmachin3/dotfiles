@@ -2,7 +2,6 @@ live_config_reload = true
 [window]
 dynamic_padding = true
 
-
 [colors.primary]
 background = "0x282828"
 foreground = "0xddc7a1"
@@ -18,8 +17,8 @@ shape = "Block"
 size = 14.0
 
 [font.normal]
-# family = "Berkeley Mono"
-family = "JetbrainsMonoNerd Font Mono"
+family = "JetbrainsMono Nerd Font"
+style = "medium"
 
 [scrolling]
 history = 4000
