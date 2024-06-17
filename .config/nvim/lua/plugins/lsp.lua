@@ -138,7 +138,6 @@ local dependencies = {
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
 	"L3MON4D3/LuaSnip",
-	"simrat39/symbols-outline.nvim",
 	"stevearc/conform.nvim",
 	"mfussenegger/nvim-lint",
 	"j-hui/fidget.nvim",
@@ -163,8 +162,6 @@ return {
 		setup_cmp()
 		setup_formatters()
 		setup_linters()
-
-		require("symbols-outline").setup()
 
 		-- Diagnostics
 		vim.diagnostic.config({
