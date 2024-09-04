@@ -13,5 +13,6 @@ return {
 		vim.keymap.set("n", "<A-l>", function()
 			bmui.nav_next()
 		end, opts)
+		vim.keymap.set("n", "<A-c>", "<cmd>bd<cr>", opts)
 	end,
 }

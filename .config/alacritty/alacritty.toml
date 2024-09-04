@@ -17,7 +17,9 @@ shape = "Block"
 size = 14.0
 
 [font.normal]
-family = "JetbrainsMono Nerd Font"
+# family = "JetbrainsMono Nerd Font"
+# family = "Berkeley Mono"
+family = "Iosevka SS14 Medium Extended"
 style = "medium"
 
 [scrolling]
