@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background: #282828;
+  background: #282828;
 }
 
 #workspaces button {
@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: #928374
+  background: #928374;
 }
 
 #workspaces button.urgent {

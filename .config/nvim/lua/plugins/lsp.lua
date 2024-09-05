@@ -60,6 +60,7 @@ local function setup_formatters()
 			typescriptreact = { "prettierd" },
 			go = { "gofumpt" },
 			markdown = { "prettierd" },
+			php = { "pint" },
 		},
 	})
 end
