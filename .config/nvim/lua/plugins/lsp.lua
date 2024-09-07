@@ -60,7 +60,18 @@ local function setup_formatters()
 			typescriptreact = { "prettierd" },
 			go = { "gofumpt" },
 			markdown = { "prettierd" },
-			php = { "pint" },
+			php = { "php-cs-fixer" },
+		},
+		formatters = {
+			["php-cs-fixer"] = {
+				command = "php-cs-fixer",
+				args = {
+					"fix",
+					"--rules=@PSR12",
+					"$FILENAME",
+				},
+				stdin = false,
+			},
 		},
 	})
 end
@@ -118,7 +129,7 @@ local handlers = {
 			}
 			vim.lsp.buf.execute_command(params)
 		end
-		require("lspconfig").tsserver.setup({
+		require("lspconfig")["ts_ls"].setup({
 			on_attach = on_lsp_attach,
 			capabilities = get_capabilities(),
 			commands = {
