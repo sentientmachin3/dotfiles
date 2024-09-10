@@ -26,6 +26,11 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
+-- buffer navigation
+vim.keymap.set("n", "<A-c>", "<cmd>bd<cr>")
+vim.keymap.set("n", "<A-l>", "<cmd>bnext<cr>")
+vim.keymap.set("n", "<A-h>", "<cmd>bprev<cr>")
+
 -- Misc
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
