@@ -14,13 +14,11 @@ blinking = "Off"
 shape = "Block"
 
 [font]
-size = 14.0
+size = 13.5
 
 [font.normal]
-# family = "JetbrainsMono Nerd Font"
-# family = "Berkeley Mono"
-family = "Iosevka SS14 Medium Extended"
-style = "medium"
+family = "JetbrainsMono Nerd Font"
+style = "semibold"
 
 [scrolling]
 history = 4000

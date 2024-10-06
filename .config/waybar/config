@@ -34,7 +34,7 @@
   "network": {
     "format-wifi": "{ifname} [{ipaddr}/{cidr}]",
     "format-ethernet": "eth [{ipaddr}/{cidr}]",
-    "tooltip-format": "gw [{gwaddr}]",
+    "tooltip-format": "{ifname}",
     "format-linked": "{ifname} [No IP]",
     "format-disconnected": "[Disconnected]",
     "format-alt": "{ifname} [{signalStrength}%]"

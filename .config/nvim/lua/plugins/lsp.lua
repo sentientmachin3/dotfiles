@@ -120,7 +120,7 @@ local handlers = {
 			},
 		})
 	end,
-	["tsserver"] = function()
+	["ts_ls"] = function()
 		local function organize_imports()
 			local params = {
 				command = "_typescript.organizeImports",
