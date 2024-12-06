@@ -6,22 +6,22 @@
 }
 
 window#waybar {
-  background: #282828;
+  background: #1c1c1c;
 }
 
 #workspaces button {
   padding: 0 5px;
-  color: #ffffff;
+  color: #e0def4;
   border: none;
   border-radius: 0;
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(156, 207, 216, 1);
 }
 
 #workspaces button.focused {
-  background: #928374;
+  background: #908caa;
 }
 
 #workspaces button.urgent {
@@ -35,5 +35,5 @@ window#waybar {
 #pulseaudio,
 #tray {
   padding: 0 10px;
-  color: #ffffff;
+  color: #e0def4;
 }
