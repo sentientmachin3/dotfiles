@@ -52,7 +52,6 @@ fi
 
 # some more aliases
 source ~/.aliases
-source ~/.private_aliases
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/tinygo/bin"
 export GPG_TTY=$(tty)

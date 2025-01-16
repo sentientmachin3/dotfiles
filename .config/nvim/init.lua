@@ -11,14 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local function setup_gruvbox()
-	vim.g.gruvbox_material_foreground = "material"
-	vim.g.gruvbox_material_background = "medium"
-	vim.g.gruvbox_material_enable_italic = 0
-	vim.g.gruvbox_material_disable_italic_comment = 1
-end
-
-setup_gruvbox()
 require("remaps")
 require("ui")
 if not vim.g.vscode then
