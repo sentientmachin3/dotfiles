@@ -39,20 +39,9 @@ alias history="history 0"
 # PROMPT="%n@%m %~ $ "
 PROMPT="%~ $ "
 
-# enable color support of ls, less and man, and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(env TERM=xterm-256color dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias diff='diff --color=auto'
-    alias ip='ip --color=auto'
-fi
-
 # some more aliases
 source ~/.aliases
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/tinygo/bin"
-export GPG_TTY=$(tty)
-eval "$(fnm env)"
+export PATH="$PATH:$HOME/.local/bin"
+# export GPG_TTY=$(tty)
+# eval "$(fnm env)"
