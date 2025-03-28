@@ -17,7 +17,8 @@ size = 13.5
 
 [font.normal]
 family = "JetbrainsMono Nerd Font"
-style = "semibold"
+# family = "SFMono Nerd Font Mono"
+style = "regular"
 
 [scrolling]
 history = 4000

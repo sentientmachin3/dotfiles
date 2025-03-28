@@ -9,6 +9,7 @@ alias df='df -h'
 alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syyu'
 alias gl='git log --oneline'
 alias more='bat --decorations never'
+alias espidf='source /opt/esp-idf/export.sh'
 
 # Utils
 alias npmscripts='jq .scripts package.json'

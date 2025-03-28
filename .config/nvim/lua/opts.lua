@@ -22,3 +22,4 @@ vim.o.termguicolors = true
 vim.o.completeopt = "menuone,noselect"
 vim.opt.swapfile = false
 vim.opt.eol = true
+vim.o.winborder = 'rounded'
