@@ -65,15 +65,14 @@ local function setup_formatters()
 end
 
 local function setup_linters()
-    require("lint").linters_by_ft = {
-        typescript = { "eslint_d" },
-        typescriptreact = { "eslint_d" },
-        json = { "eslint_d" },
-    }
-    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        callback = function()
-            require("lint").try_lint()
-        end,
+    local nonels = require("null-ls")
+    nonels.setup({
+        notify_format = "",
+        debug = true,
+        sources = {
+            require("none-ls.diagnostics.eslint_d"),
+            require("none-ls.code_actions.eslint_d"),
+        },
     })
 end
 
@@ -137,9 +136,9 @@ local dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip",
     "stevearc/conform.nvim",
-    "mfussenegger/nvim-lint",
+    "nvimtools/none-ls-extras.nvim",
+    "nvimtools/none-ls.nvim",
     "j-hui/fidget.nvim",
     "folke/trouble.nvim",
     "nvim-treesitter/nvim-treesitter-context",
