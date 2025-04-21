@@ -16,9 +16,9 @@ shape = "Block"
 size = 13.5
 
 [font.normal]
-family = "JetbrainsMono Nerd Font"
-# family = "SFMono Nerd Font Mono"
-style = "regular"
+# family = "JetbrainsMono Nerd Font"
+family = "SFMono Nerd Font Mono"
+style = "semibold"
 
 [scrolling]
 history = 4000
