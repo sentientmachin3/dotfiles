@@ -7,18 +7,17 @@ foreground = "0xE0DEF4"
 
 [cursor]
 vi_mode_style = "None"
-
 [cursor.style]
 blinking = "Off"
 shape = "Block"
 
 [font]
 size = 13.5
-
+[font.offset]
+y= -1
 [font.normal]
-# family = "JetbrainsMono Nerd Font"
-family = "SFMono Nerd Font Mono"
-style = "semibold"
+family = "JetbrainsMono Nerd Font Mono"
+style = "medium"
 
 [scrolling]
 history = 4000
@@ -27,6 +26,5 @@ history = 4000
 live_config_reload = true
 
 [terminal]
-
 [terminal.shell]
 program = "/usr/bin/zsh"

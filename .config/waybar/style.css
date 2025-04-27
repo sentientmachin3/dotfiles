@@ -3,6 +3,7 @@
   font-family: "Jetbrains Mono Nerd Font", "Font Awesome 6 Free", monospace;
   font-size: 16px;
   font-weight: 600;
+  color: #e0def4;
 }
 
 window#waybar {
@@ -28,10 +29,14 @@ window#waybar {
   background-color: #ea6962;
 }
 
+#network {
+  padding: 0 4px;
+  background-color: #31748f;
+}
+
 #clock,
 #battery,
 #backlight,
-#network,
 #pulseaudio,
 #tray {
   padding: 0 10px;

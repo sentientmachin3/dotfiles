@@ -1,16 +1,17 @@
 {
   "height": 25,
   "layer": "top",
-  "spacing": 5,
+  "spacing": 7,
   "modules-left": [
     "sway/workspaces",
+    "pulseaudio",
     "custom/media"
   ],
   "modules-right": [
-    "pulseaudio",
+    "tray",
+    "custom/vpn",
     "network",
     "battery",
-    "tray",
     "clock"
   ],
   "sway/window": {
@@ -20,7 +21,9 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{:%H:%M  %a, %d %h %Y}"
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "{:%H:%M  %a, %d %h}"
   },
   "battery": {
     "states": {
@@ -32,11 +35,11 @@
     "format-full": "bat [FULL]"
   },
   "network": {
-    "format-wifi": "{ifname} [{ipaddr}/{cidr}]",
-    "format-ethernet": "eth [{ipaddr}/{cidr}]",
-    "tooltip-format": "{ifname}",
+    "format-wifi": "wifi {essid}",
+    "format-ethernet": "eth",
+    "tooltip-format": "{ipaddr}/{cidr} [{ifname}]",
     "format-linked": "{ifname} [No IP]",
-    "format-disconnected": "[Disconnected]",
+    "format-disconnected": "[disconnected]",
     "format-alt": "{ifname} [{signalStrength}%]"
   },
   "pulseaudio": {
@@ -51,11 +54,19 @@
     "all-outputs": true,
   },
   "custom/media": {
-    "exec": "playerctl metadata --format '{{ artist }} - {{ title }} - {{ album }}'",
-    "tooltip": "playerctl metadata --format '{{ artist }} - {{ title }} - {{ album }}'",
-    "interval": 15,
+    "exec": "playerctl status --format 'media:{{ uc(status) }}'",
+    "tooltip": false,
+    "interval": 10,
     "max-length": 30,
     "on-click": "playerctl play-pause",
     "format": {}
+  },
+  "custom/vpn": {
+    "exec": "$XDG_CONFIG_HOME/waybar/scripts/vpn_status.sh",
+    "return-type": "json",
+    "tooltip": true,
+    "interval": 10,
+    "max-length": 10,
   }
+  
 }
