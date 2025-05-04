@@ -11,9 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("remaps")
-require("ui")
 require("opts")
-require("cmds")
-require("statusline")
 require("lazy").setup({ spec = "plugins", change_detection = { notify = false } })
+require("remaps")
+require("cmds")
+require("ui")

@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Move code up/down
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
@@ -11,9 +8,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-w>", "<C-w>o", { nowait = true })
-
--- Sick uh?
-vim.keymap.set("n", "J", "mzJ`z")
 
 -- Center after search page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
