@@ -23,7 +23,7 @@ default_floating_border none
 hide_edge_borders --i3 smart
 
 # Outputs
-output "*" bg #1C1C1C solid_color
+output "*" bg #000000 solid_color
 output eDP-1 resolution 1920x1080 position 0,0
 # output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
