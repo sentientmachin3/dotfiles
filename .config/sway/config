@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty -e tmux
+set $term ghostty
 set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
@@ -25,6 +25,7 @@ hide_edge_borders --i3 smart
 # Outputs
 output "*" bg #1C1C1C solid_color
 output eDP-1 resolution 1920x1080 position 0,0
+# output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
 exec swayrd &
 exec mako
@@ -94,7 +95,18 @@ bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3
 
 bar { 
-     swaybar_command waybar
+    position top
+    font "Jetbrains Mono Nerd Font 12"
+    height 25
+    colors {
+        statusline #e0def4
+        background #000000
+        inactive_workspace #000000 #000000 #e0def4
+        active_workspace #000000 #000000 #e0def4
+        focused_workspace #31748f #31748f #e0def4
+        urgent_workspace #f23033 #f23033 #e0def4
+    }
+    status_command while ~/.config/sway/scripts/status.sh; do sleep 3; done
 }
 
 include /etc/sway/config.d/*

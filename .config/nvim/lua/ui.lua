@@ -8,3 +8,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+-- other colors
+vim.cmd("highlight Normal guibg=Black guifg=White")
