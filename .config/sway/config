@@ -23,7 +23,7 @@ default_floating_border none
 hide_edge_borders --i3 smart
 
 # Outputs
-output "*" bg #141617 solid_color
+output "*" bg #151515 solid_color
 output eDP-1 resolution 1920x1080 position 0,0
 # output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
@@ -99,12 +99,12 @@ bar {
     font "Jetbrains Mono Nerd Font 12"
     height 25
     colors {
-        statusline #ebdbb2
-        background #141617
-        inactive_workspace #141617 #141617 #ebdbb2
-        active_workspace #141617 #141617 #ebdbb2
-        focused_workspace #83a598 #83a598 #ebdbb2
-        urgent_workspace #fb4934 #fb4934 #ebdbb2
+        statusline #e1e1e1
+        background #151515
+        inactive_workspace #151515 #151515 #e1e1e1
+        active_workspace #151515 #151515 #e1e1e1
+        focused_workspace #83a598 #83a598 #e1e1e1
+        urgent_workspace #fb4934 #fb4934 #e1e1e1
     }
     status_command while ~/.config/sway/scripts/status.sh; do sleep 3; done
 }
