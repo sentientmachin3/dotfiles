@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term ghostty
+set $term alacritty -e tmux
 set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
@@ -100,13 +100,13 @@ bar {
     height 25
     colors {
         statusline #e0def4
-        background #000000
-        inactive_workspace #000000 #000000 #e0def4
-        active_workspace #000000 #000000 #e0def4
-        focused_workspace #31748f #31748f #e0def4
+        background #1C1C1C
+        inactive_workspace #1C1C1C #1C1C1C #e0def4
+        active_workspace #1C1C1C #1C1C1C #e0def4
+        focused_workspace #9ccfd8 #9ccfd8 #e0def4
         urgent_workspace #f23033 #f23033 #e0def4
     }
-    status_command while ~/.config/sway/scripts/status.sh; do sleep 3; done
+    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
 }
 
 include /etc/sway/config.d/*
