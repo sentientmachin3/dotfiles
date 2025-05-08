@@ -31,12 +31,15 @@ window#waybar {
   background-color: #3e8fb0;
 }
 
-#clock,
 #battery,
 #backlight,
 #network,
 #pulseaudio,
 #tray {
   padding: 0 10px;
+  color: #e0def4;
+}
+
+#clock {
   color: #e0def4;
 }

@@ -42,18 +42,18 @@
   },
   "network": {
     "format-wifi": "  {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} ⇋",
-    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-ethernet": "⇋ ETH",
+    "tooltip-format": "{ifname} via {gwaddr} ({ipaddr}/{cidr})",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⇋ Disconn.",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon} {volume}%",
-    "format-muted": " {format_source}",
+    "format": "  {volume}%",
+    "format-muted": " MUT",
     "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format-source-muted": " MUT",
     "on-click": "pavucontrol"
   }
 }
