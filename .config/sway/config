@@ -95,18 +95,8 @@ bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3
 
 bar { 
-    position top
-    font "Jetbrains Mono Nerd Font 12"
-    height 25
-    colors {
-        statusline #e0def4
-        background #1C1C1C
-        inactive_workspace #1C1C1C #1C1C1C #e0def4
-        active_workspace #1C1C1C #1C1C1C #e0def4
-        focused_workspace #9ccfd8 #9ccfd8 #e0def4
-        urgent_workspace #f23033 #f23033 #e0def4
-    }
-    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
+     swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
+

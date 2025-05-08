@@ -1,0 +1,59 @@
+{
+  "layer": "top",
+  "height": 25,
+  "modules-left": ["sway/workspaces", "pulseaudio", "custom/media"],
+  "modules-right": ["tray", "network", "custom/vpn", "battery", "clock"],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+  "custom/media": {
+    "exec": "playerctl status --format ' {{ uc(status) }}'",
+    "tooltip": false,
+    "interval": 10,
+    "max-length": 30,
+    "on-click": "playerctl play-pause",
+    "format": {}
+  },
+  "custom/vpn": {
+    "exec": "$XDG_CONFIG_HOME/waybar/scripts/vpn_status.sh",
+    "return-type": "json",
+    "tooltip": true,
+    "interval": 10,
+    "max-length": 10
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%H:%M  %a, %d %h %Y}"
+  },
+  "battery": {
+    "states": {
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": " {capacity}% ",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}% ",
+    "format-alt": "{time} {icon}",
+  },
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "{ipaddr}/{cidr} ⇋",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⇋ Disconn.",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume}%",
+    "format-muted": " {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "pavucontrol"
+  }
+}
