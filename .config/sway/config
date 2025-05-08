@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term ghostty
+set $term alacritty -e tmux
 set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
@@ -99,14 +99,14 @@ bar {
     font "Jetbrains Mono Nerd Font 12"
     height 25
     colors {
-        statusline #e1e1e1
-        background #151515
-        inactive_workspace #151515 #151515 #e1e1e1
-        active_workspace #151515 #151515 #e1e1e1
-        focused_workspace #83a598 #83a598 #e1e1e1
-        urgent_workspace #fb4934 #fb4934 #e1e1e1
+        statusline #e0def4
+        background #1C1C1C
+        inactive_workspace #1C1C1C #1C1C1C #e0def4
+        active_workspace #1C1C1C #1C1C1C #e0def4
+        focused_workspace #9ccfd8 #9ccfd8 #e0def4
+        urgent_workspace #f23033 #f23033 #e0def4
     }
-    status_command while ~/.config/sway/scripts/status.sh; do sleep 3; done
+    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
 }
 
 include /etc/sway/config.d/*

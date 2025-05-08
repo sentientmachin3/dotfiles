@@ -1,12 +1,15 @@
 return {
-	"aktersnurra/no-clown-fiesta.nvim",
+	"rose-pine",
 	priority = 1000,
 	config = function()
-		require("no-clown-fiesta").setup({
+		require("rose-pine").setup({
 			styles = {
-				type = { bold = false, italic = false },
+				bold = false,
+				italic = false,
+				transparency = false,
 			},
 		})
+		vim.cmd("colorscheme rose-pine")
 	end,
 	lazy = false,
 }

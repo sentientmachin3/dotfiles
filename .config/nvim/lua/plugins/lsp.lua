@@ -139,12 +139,10 @@ local dependencies = {
 	"williamboman/mason-lspconfig.nvim",
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
-	"L3MON4D3/LuaSnip",
 	"stevearc/conform.nvim",
 	"mfussenegger/nvim-lint",
 	"j-hui/fidget.nvim",
 	"folke/trouble.nvim",
-	"nvim-treesitter/nvim-treesitter-context",
 }
 
 return {
