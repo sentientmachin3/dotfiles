@@ -88,55 +88,58 @@ local function get_capabilities()
 	)
 end
 
-local function default_handler(server_name)
-	require("lspconfig")[server_name].setup({
-		on_attach = on_lsp_attach,
-		capabilities = get_capabilities(),
-	})
+local function ts_organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = "",
+	}
+	vim.lsp.buf.execute_command(params)
 end
 
-local handlers = {
-	default_handler,
-	["lua_ls"] = function()
-		require("lspconfig").lua_ls.setup({
-			on_attach = on_lsp_attach,
-			capabilities = get_capabilities(),
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
+local function setup_lsps()
+	local lspconfig = require("lspconfig")
+	local autosetup_lsps = {
+		"gopls",
+		"clangd",
+		"pyright",
+		"jsonls",
+	}
+	lspconfig.lua_ls.setup({
+		on_attach = on_lsp_attach,
+		capabilities = get_capabilities(),
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
 				},
 			},
-		})
-	end,
-	["ts_ls"] = function()
-		local function organize_imports()
-			local params = {
-				command = "_typescript.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-				title = "",
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-		require("lspconfig")["ts_ls"].setup({
+		},
+	})
+	lspconfig.ts_ls.setup({
+		on_attach = on_lsp_attach,
+		capabilities = get_capabilities(),
+		commands = {
+			OrganizeImports = {
+				ts_organize_imports,
+				description = "Organize Imports",
+			},
+		},
+	})
+	-- LSPs with an automatic setup
+	for _, lsp in ipairs(autosetup_lsps) do
+		lspconfig[lsp].setup({
 			on_attach = on_lsp_attach,
 			capabilities = get_capabilities(),
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
 		})
-	end,
-}
+	end
+end
 
 local dependencies = {
+	"neovim/nvim-lspconfig",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lua/plenary.nvim",
 	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
 	"stevearc/conform.nvim",
@@ -146,20 +149,25 @@ local dependencies = {
 }
 
 return {
-	"neovim/nvim-lspconfig",
+	"williamboman/mason-lspconfig.nvim",
 	dependencies = dependencies,
 	config = function()
+		setup_lsps()
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
+				"ts_ls",
+				"gopls",
+				"clangd",
+				"pyright",
+				"jsonls",
 			},
-			handlers = handlers,
 		})
-		require("fidget").setup()
 		setup_cmp()
 		setup_formatters()
 		setup_linters()
+		require("fidget").setup()
 
 		-- Diagnostics
 		vim.diagnostic.config({
