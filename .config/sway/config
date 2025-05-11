@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty -e tmux
+set $term wezterm
 set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
@@ -23,7 +23,7 @@ default_floating_border none
 hide_edge_borders --i3 smart
 
 # Outputs
-output "*" bg #151515 solid_color
+output "*" bg #191724 solid_color
 output eDP-1 resolution 1920x1080 position 0,0
 # output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0

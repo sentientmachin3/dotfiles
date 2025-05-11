@@ -7,7 +7,7 @@ font_size = 20
 decrease_interval = 48
 
 [colors]
-background = '#151515'
+background = '#191724'
 prompt = '#e1e1e1'
 text = '#908CAA'      # for search results
 text_query = '#e1e1e1'
