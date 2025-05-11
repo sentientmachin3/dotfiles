@@ -104,6 +104,9 @@ local function setup_lsps()
 		"clangd",
 		"pyright",
 		"jsonls",
+		"html",
+		"arduino_language_server",
+		"tailwindcss",
 	}
 	lspconfig.lua_ls.setup({
 		on_attach = on_lsp_attach,
@@ -162,6 +165,7 @@ return {
 				"clangd",
 				"pyright",
 				"jsonls",
+				"html",
 			},
 		})
 		setup_cmp()
