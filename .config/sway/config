@@ -43,9 +43,9 @@ input "type:touchpad" {
 }
 
 # particular windows configurations
-assign [app_id="firefox"] workspace 2
+assign [app_id="brave"] workspace 2
 assign [class="Spotify"] workspace 10
-exec firefox
+exec brave
 
 input * xkb_options compose:lwin
 # Keybindings
