@@ -1,1 +1,14 @@
+*
 
+!.config/nvim/
+!.config/mako/
+!.config/sway/
+!.config/waybar/
+!.config/kickoff/
+!.config/wezterm/
+!.local/bin/
+!.aliases
+!.tmux.conf
+!.zprofile
+!.zshenv
+!.zshrc

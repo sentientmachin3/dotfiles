@@ -11,5 +11,3 @@ This repo contains my configuration files for my dev / daily driver environment,
 
 To install the files in the directory run `stow -t ~/ .`. This will symlink all files in the current directory into your home,
 following the tree laid out in this directory.
-
-**Note: some aliases require [shdevkit](https://github.com/sentientmachin3/shdevkit) to execute**
