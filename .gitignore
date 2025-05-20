@@ -6,7 +6,7 @@
 !.config/waybar/
 !.config/kickoff/
 !.config/wezterm/
-!.local/bin/
+!.local/bin/*
 !.aliases
 !.tmux.conf
 !.zprofile

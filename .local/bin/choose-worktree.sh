@@ -13,4 +13,8 @@ for repo in $repos; do
 done
 
 selected=$(printf '%s\n' "${worktrees[@]}" | fzf --cycle)
-echo "$HOME/repos/$selected;$selected"
+if [[ $selected == "" ]]; then
+    echo $HOME
+else
+    echo "$HOME/repos/$selected"
+fi

@@ -5,7 +5,8 @@ local config = {
 	enable_tab_bar = false,
 	default_prog = { "tmux" },
 	font = wezterm.font({
-		family = "JetbrainsMono Nerd Font Mono",
+		-- family = "JetbrainsMono Nerd Font Mono",
+		family = "SFMono Nerd Font Mono",
 		weight = "Medium",
 		harfbuzz_features = {
 			"calt=0",
@@ -17,7 +18,7 @@ local config = {
 			"cv20", -- 5 old variant
 		},
 	}),
-	font_size = 14,
+	font_size = 15,
 }
 
 return config
