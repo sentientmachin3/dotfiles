@@ -9,6 +9,8 @@ for repo in $repos; do
         for worktree in $(ls -1 $HOME/repos/$repo/worktrees); do
             worktrees+=( "$repo/$worktree" )
         done
+    else
+        worktrees+=( "$repo" )
     fi
 done
 
