@@ -8,7 +8,6 @@ set $down j
 set $up k
 set $right l
 set $term wezterm
-set $full_menu kickoff
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
 
@@ -43,7 +42,7 @@ input "type:touchpad" {
 }
 
 # particular windows configurations
-assign [app_id="brave"] workspace 2
+assign [app_id="librewolf"] workspace 2
 assign [class="Spotify"] workspace 10
 exec brave
 
@@ -52,7 +51,6 @@ input * xkb_options compose:lwin
 bindsym Mod1 -right_alt
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+a exec $full_menu
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec $powermenu
