@@ -1,7 +1,24 @@
 return {
-	"tanvirtin/vgit.nvim",
-	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
+	"lewis6991/gitsigns.nvim",
 	config = function()
-		require("vgit").setup()
+		require("gitsigns").setup({
+			signs = {
+				add = { text = "│" },
+				change = { text = "│" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
+			on_attach = function()
+				local gitsigns = require("gitsigns")
+				vim.keymap.set("n", "]c", function()
+					gitsigns.nav_hunk("next")
+				end)
+				vim.keymap.set("n", "[c", function()
+					gitsigns.nav_hunk("prev")
+				end)
+			end,
+		})
 	end,
 }
