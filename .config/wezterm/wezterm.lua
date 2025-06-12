@@ -7,7 +7,7 @@ local config = {
 	font = wezterm.font({
 		-- family = "JetbrainsMono Nerd Font Mono",
 		-- family = "SFMono Nerd Font Mono",
-		family = "Berkeley Mono Medium",
+		family = "Berkeley Mono",
 		weight = "Medium",
 	}),
 	font_size = 15

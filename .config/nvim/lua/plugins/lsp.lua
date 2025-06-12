@@ -1,6 +1,7 @@
 local function setup_cmp()
 	require("blink.cmp").setup({
 		cmdline = { enabled = false },
+		keymap = { preset = "enter" },
 		completion = {
 			keyword = { range = "full" },
 			accept = { auto_brackets = { enabled = false } },
@@ -50,14 +51,15 @@ local function setup_linters()
 	})
 end
 
--- local function ts_organize_imports()
--- 	local params = {
--- 		command = "_typescript.organizeImports",
--- 		arguments = { vim.api.nvim_buf_get_name(0) },
--- 		title = "",
--- 	}
--- 	vim.lsp.buf.execute_command(params)
--- end
+local function ts_organize_imports(client)
+	client:exec_cmd({
+		title = "organize_imports",
+		command = "_typescript.organizeImports",
+		arguments = {
+			vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()),
+		},
+	}, { bufnr = vim.api.nvim_get_current_buf() })
+end
 
 local function setup_lsps()
 	local cmp = require("blink.cmp")
@@ -85,7 +87,7 @@ return {
 		"williamboman/mason.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"nvim-lua/plenary.nvim",
-        { "saghen/blink.cmp", version = "1.*" },
+		{ "saghen/blink.cmp", version = "1.*" },
 		"stevearc/conform.nvim",
 		"mfussenegger/nvim-lint",
 		"j-hui/fidget.nvim",
@@ -101,7 +103,6 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function()
 				local bufopts = { noremap = true, silent = true, buffer = bufnr }
-				vim.keymap.set("n", "<leader>s", "<cmd>OrganizeImports<cr>")
 				vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>")
 				vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", { buffer = true })
 				vim.keymap.set("n", "<leader>f", function()
@@ -116,6 +117,13 @@ return {
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+				local client = vim.lsp.get_clients({ name = "ts_ls", bufnr = 0 })[1]
+				if client ~= nil then
+					vim.api.nvim_create_user_command("OrganizeImports", function()
+						ts_organize_imports(client)
+					end, {})
+					vim.keymap.set("n", "<leader>s", "<cmd>OrganizeImports<cr>")
+				end
 			end,
 		})
 		-- Diagnostics
