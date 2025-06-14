@@ -42,7 +42,7 @@ local function setup_linters()
 		typescriptreact = { "eslint_d" },
 		json = { "eslint_d" },
 	}
-	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 		callback = function()
 			local get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
 			local client = get_clients({ bufnr = 0 })[1] or {}
@@ -117,6 +117,7 @@ return {
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+				-- Autocmd to sort imports for typescript
 				local client = vim.lsp.get_clients({ name = "ts_ls", bufnr = 0 })[1]
 				if client ~= nil then
 					vim.api.nvim_create_user_command("OrganizeImports", function()

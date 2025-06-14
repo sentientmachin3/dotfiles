@@ -7,9 +7,8 @@ return {
 			auto_refresh = false,
 			auto_jump = false,
 			follow = true,
-			open_no_results = false,
 		})
-		vim.keymap.set("n", "<leader>e", "<cmd>Trouble diagnostics toggle<cr>")
+		vim.keymap.set("n", "<leader>e", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 	end,
 	cmd = "Trouble",
 }
