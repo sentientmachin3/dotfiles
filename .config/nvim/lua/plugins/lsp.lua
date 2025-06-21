@@ -91,7 +91,6 @@ return {
 		"stevearc/conform.nvim",
 		"mfussenegger/nvim-lint",
 		"j-hui/fidget.nvim",
-		"folke/trouble.nvim",
 	},
 	config = function()
 		setup_lsps()
@@ -117,6 +116,7 @@ return {
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+				vim.keymap.set("n", "<leader>e", require("telescope.builtin").diagnostics, { buffer = 0 })
 				-- Autocmd to sort imports for typescript
 				local client = vim.lsp.get_clients({ name = "ts_ls", bufnr = 0 })[1]
 				if client ~= nil then
