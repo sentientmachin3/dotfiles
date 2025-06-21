@@ -6,9 +6,9 @@ local config = {
 	default_prog = { "tmux" },
 	font = wezterm.font({
 		family = "Berkeley Mono",
-		weight = "Medium",
+		weight = "DemiBold",
 	}),
-	font_size = 15
+	font_size = 14
 }
 
 return config
