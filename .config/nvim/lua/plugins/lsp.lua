@@ -116,7 +116,7 @@ return {
 				vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
-				vim.keymap.set("n", "<leader>e", require("telescope.builtin").diagnostics, { buffer = 0 })
+				vim.keymap.set("n", "<leader>e", "<cmd>Telescope diagnostics bufnr=0<cr>")
 				-- Autocmd to sort imports for typescript
 				local client = vim.lsp.get_clients({ name = "ts_ls", bufnr = 0 })[1]
 				if client ~= nil then
@@ -130,8 +130,7 @@ return {
 		-- Diagnostics
 		vim.diagnostic.config({
 			update_in_insert = true,
-			underline = false,
-			virtual_lines = true,
+            undercurl = true,
 			virtual_text = true,
 			float = {
 				border = "rounded",
