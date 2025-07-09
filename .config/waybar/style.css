@@ -35,6 +35,7 @@ window#waybar {
 #backlight,
 #network,
 #pulseaudio,
+#custom-media,
 #tray {
   padding: 0 10px;
   color: #e0def4;

@@ -2,7 +2,7 @@
   "layer": "top",
   "height": 25,
   "modules-left": ["sway/workspaces", "pulseaudio", "custom/media"],
-  "modules-right": ["tray", "network", "custom/vpn", "battery", "clock"],
+  "modules-right": ["tray", "network", "battery", "clock"],
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -11,7 +11,7 @@
   "custom/media": {
     "exec": "playerctl status --format ' {{ uc(status) }}'",
     "tooltip": false,
-    "interval": 10,
+    "interval": 2,
     "max-length": 30,
     "on-click": "playerctl play-pause",
     "format": {}
