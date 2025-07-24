@@ -1,6 +1,6 @@
 prompt = '> '
 padding = 200
-fonts = [ 'JetbrainsMono Nerd Font' ]
+fonts = [ 'Berkeley Mono Medium' ]
 font_size = 20
 
 [history]
