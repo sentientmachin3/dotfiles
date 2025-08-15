@@ -30,6 +30,33 @@ local config = {
 			},
 		},
 	},
+	keys = {
+		{
+			mods = "CTRL",
+			key = "phys:f",
+			action = wezterm.action_callback(function(win, _)
+				local _, pane, _ = win:mux_window():spawn_tab({})
+				pane:send_text("lw\n")
+			end),
+		},
+		{
+			mods = "CTRL",
+			key = "phys:t",
+			action = wezterm.action_callback(function(win, _)
+				win:mux_window():spawn_tab({})
+			end),
+		},
+		{
+			mods = "CTRL",
+			key = ";",
+			action = wezterm.action({ ActivateTabRelative = 1 }),
+		},
+		{
+			mods = "CTRL",
+			key = "phys:h",
+			action = wezterm.action({ ActivateTabRelative = -1 }),
+		},
+	},
 }
 
 return config
