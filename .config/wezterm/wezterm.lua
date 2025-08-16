@@ -43,7 +43,7 @@ local config = {
 			mods = "CTRL",
 			key = "phys:t",
 			action = wezterm.action_callback(function(win, _)
-				win:mux_window():spawn_tab({})
+				win:mux_window():spawn_tab({ cwd = os.getenv("HOME") })
 			end),
 		},
 		{

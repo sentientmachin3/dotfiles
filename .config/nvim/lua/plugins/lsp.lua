@@ -32,6 +32,7 @@ local function setup_formatters()
 			typescriptreact = { "prettierd" },
 			go = { "gofumpt" },
 			markdown = { "prettierd" },
+			rust = { "rustfmt" },
 		},
 	})
 end
@@ -78,6 +79,7 @@ local function setup_lsps()
 		"gopls",
 		"yamlls",
 		"tailwindcss-language-server",
+		"rust_analyzer",
 	})
 end
 
@@ -130,7 +132,7 @@ return {
 		-- Diagnostics
 		vim.diagnostic.config({
 			update_in_insert = true,
-            undercurl = true,
+			undercurl = true,
 			virtual_text = true,
 			float = {
 				border = "rounded",
