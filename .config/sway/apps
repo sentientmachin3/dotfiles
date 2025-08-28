@@ -1,5 +1,6 @@
 bruno = 'bruno'
 chrome = 'chromium'
+brave = 'brave'
 dbeaver = 'dbeaver'
 files = 'thunar'
 floorp = 'floorp'
