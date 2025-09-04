@@ -43,9 +43,7 @@ input "type:touchpad" {
 }
 
 # particular windows configurations
-assign [app_id="librewolf"] workspace 2
 assign [class="Spotify"] workspace 10
-exec brave
 
 input * xkb_options compose:lwin
 # Keybindings
