@@ -24,4 +24,9 @@ vim.o.termguicolors = true
 vim.o.completeopt = "menuone,noselect"
 vim.opt.swapfile = false
 vim.opt.eol = true
-vim.o.winborder = 'rounded'
+vim.o.winborder = "rounded"
+
+-- Statusline config
+vim.api.nvim_set_hl(0, "StatusLineFilename", { fg = "#96BFFF", bold = true })
+vim.api.nvim_set_hl(0, "StatusLineRight", { fg = "#f38ba8" })
+vim.opt.statusline = "%#StatusLineFilename#%t%=%#StatusLineRight#%{expand('%:e')} %l/%L:%c"
