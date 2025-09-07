@@ -11,7 +11,7 @@ local config = {
 	},
 	font = wezterm.font({
 		family = "Berkeley Mono",
-		weight = "DemiBold",
+		weight = "Medium",
 	}),
 	font_size = 13,
 	colors = {

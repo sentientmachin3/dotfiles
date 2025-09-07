@@ -11,7 +11,7 @@ return {
 			},
 			palette = {
 				main = {
-					pine = "#62A1BA",
+					pine = "#6FADC7",
 				},
 			},
 		})
