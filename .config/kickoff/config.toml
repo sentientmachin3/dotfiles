@@ -1,17 +1,17 @@
 prompt = '> '
 padding = 200
-fonts = [ 'Berkeley Mono Medium' ]
+fonts = [ 'Berkeley Mono Semibold' ]
 font_size = 20
 
 [history]
 decrease_interval = 48
 
 [colors]
-background = '#191724'
-prompt = '#e1e1e1'
-text = '#908CAA'      # for search results
-text_query = '#e1e1e1'
-text_selected = '#ebbcba'# for the currently selected result
+background = '#232A2E'
+prompt = '#F8F9E8'
+text_query = '#F8F9E8'
+text = '#839E9A'      # for search results
+text_selected= '#F8F9E8'# for the currently selected result
 
 [keybindings]
 paste = ["ctrl+v"]

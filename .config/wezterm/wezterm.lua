@@ -1,7 +1,9 @@
 local wezterm = require("wezterm")
 
+local BG_COLOR = "#232A2E"
+local FG_COLOR = "#F8F9E8"
+
 local config = {
-	color_scheme = "rose-pine",
 	enable_tab_bar = true,
 	use_fancy_tab_bar = false,
 	show_new_tab_button_in_tab_bar = false,
@@ -11,21 +13,24 @@ local config = {
 	},
 	font = wezterm.font({
 		family = "Berkeley Mono",
-		weight = "Medium",
+		-- weight = "Medium",
+		weight = "DemiBold",
 	}),
 	font_size = 13,
 	colors = {
+		background = BG_COLOR,
+		foreground = FG_COLOR,
 		tab_bar = {
-			background = "#191724",
+			background = BG_COLOR,
 			active_tab = {
-				fg_color = "#191724",
-				bg_color = "#9ccfd8",
+				fg_color = BG_COLOR,
+				bg_color = FG_COLOR,
 				intensity = "Bold",
 				italic = false,
 			},
 			inactive_tab = {
-				bg_color = "#191724",
-				fg_color = "#9ccfd8",
+				bg_color = BG_COLOR,
+				fg_color = FG_COLOR,
 				intensity = "Bold",
 			},
 		},

@@ -1,21 +1,22 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"everviolet/nvim",
+	name = "evergarden",
 	priority = 1000,
 	config = function()
-		require("rose-pine").setup({
-			styles = {
-				bold = false,
-				italic = false,
-				transparency = false,
+		require("evergarden").setup({
+			theme = {
+				variant = "fall",
+				accent = "green",
 			},
-			palette = {
-				main = {
-					pine = "#6FADC7",
-				},
+			style = {
+				tabline = { "reverse" },
+				search = { "reverse" },
+				incsearch = { "reverse" },
+				types = {},
+				keyword = {},
+				comment = {},
 			},
 		})
-		vim.cmd("colorscheme rose-pine")
+		vim.cmd("colorscheme evergarden")
 	end,
-	lazy = false,
 }

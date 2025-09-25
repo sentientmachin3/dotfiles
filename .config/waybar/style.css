@@ -1,34 +1,34 @@
 * {
-  font-family: "Jetbrains Mono Nerd Font", "Font Awesome 6 Free", monospace;
+  font-family: "Font Awesome 6 Free", "Berkeley Mono", monospace;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 window#waybar {
-  background: #191724
+  background: #232a2e;
 }
 
 #workspaces button {
   padding: 0 5px;
-  color: #e0def4;
+  color: #f8f9e8;
   border: none;
   border-radius: 0;
 }
 
 #workspaces button:hover {
-  background: rgba(156, 207, 216, 1);
+  background: #839e9a;
 }
 
 #workspaces button.focused {
-  background: #908caa;
+  background: #96B4AA;
 }
 
 #workspaces button.urgent {
-  background-color: #ea6962;
+  background-color: #F57F82;
 }
 
 #network {
-  background-color: #3e8fb0;
+  background-color: #839E9A;
 }
 
 #battery,
@@ -38,9 +38,9 @@ window#waybar {
 #custom-media,
 #tray {
   padding: 0 10px;
-  color: #e0def4;
+  color: #F8F9E8;
 }
 
 #clock {
-  color: #e0def4;
+  color: #F8F9E8;
 }
