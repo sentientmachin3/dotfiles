@@ -20,3 +20,7 @@ alias git-add-remote-refs='git config remote.origin.fetch "+refs/heads/*:refs/re
 alias lw='cd $(choose-worktree.sh)'
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias idf='source /opt/esp-idf/export.sh'
+
+function nw() {
+    lw && nvim .
+}
