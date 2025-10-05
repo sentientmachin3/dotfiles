@@ -1,15 +1,12 @@
-alias top='htop'
 alias g='git status'
 alias uu='yay --noconfirm -Syyu --needed --devel'
 alias lsorphans='sudo pacman -Qdt'
 alias rmorphans='sudo pacman -Rns $(lsorphans| cut -d " " -f 1)'
 
 # List aliases
-alias df='df -h'
 alias sortmirrors='sudo reflector --verbose -c Germany -c France -c Italy -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syyu'
 alias gl='git log --oneline'
 alias more='bat --decorations never'
-alias espidf='source /opt/esp-idf/export.sh'
 
 # Utils
 alias npmscripts='jq .scripts package.json'
@@ -20,6 +17,7 @@ alias git-add-remote-refs='git config remote.origin.fetch "+refs/heads/*:refs/re
 alias lw='cd $(choose-worktree.sh)'
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias idf='source /opt/esp-idf/export.sh'
+alias cbw='checkout-remote-branch.sh'
 
 function nw() {
     lw && nvim .
