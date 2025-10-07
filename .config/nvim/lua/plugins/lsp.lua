@@ -42,6 +42,7 @@ local function setup_linters()
 		typescript = { "eslint_d" },
 		typescriptreact = { "eslint_d" },
 		json = { "eslint_d" },
+		go = { "golangcilint" },
 	}
 	vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 		callback = function()
