@@ -58,7 +58,7 @@ local config = {
 		},
 		{
 			mods = "CTRL",
-			key = "phys:h",
+			key = "phys:s",
 			action = wezterm.action({ ActivateTabRelative = -1 }),
 		},
 	},

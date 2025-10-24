@@ -18,6 +18,7 @@ alias lw='cd $(choose-worktree.sh)'
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias idf='source /opt/esp-idf/export.sh'
 alias cbw='checkout-remote-branch.sh'
+alias vim='nvim'
 
 function nw() {
     lw && nvim .
