@@ -1,10 +1,8 @@
 local p = {
     teal = "#232A2E",
-	-- teal = "#062329",
 	lteal = "#7AD0C6",
 	blue = "#005054",
 	lblue = "#ADD8E6",
-	-- gold = "#D1B897",
 	gold = "#C3DB93",
 	yellow = "#F9FF54",
 	lyellow = "#FCE094",
