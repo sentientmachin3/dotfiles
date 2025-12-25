@@ -23,7 +23,7 @@ hide_edge_borders --i3 smart
 
 # Outputs
 # output "*" bg #191724 solid_color
-output "*" bg /usr/share/backgrounds/forest.png fill
+output "*" bg /usr/share/backgrounds/background.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
 # output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
