@@ -1,8 +1,0 @@
-chrome = 'chromium'
-brave = 'brave'
-dbeaver = 'dbeaver'
-files = 'thunar'
-keepass = 'keepassxc'
-spotify = 'spotify'
-telegram = 'Telegram'
-tor = 'torbrowser-launcher'
