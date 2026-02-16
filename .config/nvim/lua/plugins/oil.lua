@@ -2,9 +2,18 @@ return {
 	"stevearc/oil.nvim",
 	config = function()
 		local oil = require("oil")
-        oil.setup({
+		oil.setup({
 			view_options = {
 				show_hidden = true,
+				is_hidden_file = function()
+					return false
+				end,
+			},
+			columns = {
+				directory = {
+					color = "#FFFFFF",
+					name = "OilDir",
+				},
 			},
 		})
 		vim.keymap.set("n", "<leader>-", function()
