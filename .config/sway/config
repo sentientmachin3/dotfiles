@@ -28,6 +28,7 @@ output eDP-1 resolution 1920x1080 position 0,0
 # output DP-3 resolution 1920x1080 position 0,0
 output DP-3 resolution 2560x1440 position 1920,0
 exec swayrd &
+exec blueman-applet &
 exec mako
 exec_always gammastep -O 4500
 exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
