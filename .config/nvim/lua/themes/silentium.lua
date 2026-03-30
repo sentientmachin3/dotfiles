@@ -13,7 +13,7 @@ local accents = {
 
 local colors = {
 	accent = "#C3E793",
-	white = "#d1b8b8",
+	white = "#E2E2E2",
 	light_gray = "#A6A6A6",
 	gray = "#737373",
 	dark_gray = "#282828",
