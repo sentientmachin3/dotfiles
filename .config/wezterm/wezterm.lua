@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
-local BG_COLOR = "#141414"
-local FG_COLOR = "#E2E2E2"
+local BG_COLOR = "#2D353B"
+local FG_COLOR = "#D3C6AA"
 
 local config = {
 	enable_tab_bar = true,
@@ -14,10 +14,10 @@ local config = {
 	},
 	font = wezterm.font({
 		family = "Berkeley Mono",
-	    -- weight = "Medium",
-		weight = "DemiBold",
+	    weight = "Medium",
+		-- weight = "DemiBold",
 	}),
-	font_size = 14,
+	font_size = 13,
 	colors = {
 		background = BG_COLOR,
 		foreground = FG_COLOR,

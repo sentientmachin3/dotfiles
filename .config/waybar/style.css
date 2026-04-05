@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  background: #141414;
+  background: #2d353b;
 }
 
 #workspaces button {
@@ -38,9 +38,9 @@ window#waybar {
 #custom-media,
 #tray {
   padding: 0 10px;
-  color: #F8F9E8;
+  color: #d3c6aa;
 }
 
 #clock {
-  color: #F8F9E8;
+  color: #d3c6aa;
 }

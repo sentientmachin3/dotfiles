@@ -7,11 +7,11 @@ font_size = 20
 decrease_interval = 48
 
 [colors]
-background = '#141414'
-prompt = '#F8F9E8'
-text_query = '#F8F9E8'
-text = '#839E9A'      # for search results
-text_selected= '#F8F9E8'# for the currently selected result
+background = '#2d353b'
+prompt = '#d3c6aa'
+text_query = '#d3c6aa'
+text = '#56635f'      # for search results
+text_selected= '#d3c6aa'# for the currently selected result
 
 [keybindings]
 paste = ["ctrl+v"]
