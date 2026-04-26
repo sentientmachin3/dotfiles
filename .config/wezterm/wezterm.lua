@@ -52,16 +52,6 @@ local config = {
 				win:mux_window():spawn_tab({ cwd = os.getenv("HOME") })
 			end),
 		},
-		{
-			mods = "CTRL",
-			key = ";",
-			action = wezterm.action({ ActivateTabRelative = 1 }),
-		},
-		{
-			mods = "CTRL",
-			key = "phys:s",
-			action = wezterm.action({ ActivateTabRelative = -1 }),
-		},
 	},
 }
 

@@ -31,7 +31,7 @@ exec swayrd &
 exec blueman-applet &
 exec mako
 exec_always gammastep -O 4500
-exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
+# exec_always --no-startup-id '~/.config/sway/scripts/lid-switch.sh'
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
 
@@ -116,7 +116,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar { 
-     swaybar_command waybar
+    position top
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command $HOME/.config/sway/scripts/status_line.sh
+    height 20
+    font Berkeley Mono Medium 12
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #323232 #323232 #5c5c5c
+    }
 }
 
 include /etc/sway/config.d/*
