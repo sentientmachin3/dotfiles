@@ -13,11 +13,12 @@ local config = {
 		bottom = 0,
 	},
 	font = wezterm.font({
-		family = "Berkeley Mono",
-	    weight = "Medium",
-		-- weight = "DemiBold",
+		-- family = "Berkeley Mono",
+		family = "Iosevka Dabian",
+	    -- weight = "Medium",
+		weight = "DemiBold",
 	}),
-	font_size = 13,
+	font_size = 14,
 	colors = {
 		background = BG_COLOR,
 		foreground = FG_COLOR,

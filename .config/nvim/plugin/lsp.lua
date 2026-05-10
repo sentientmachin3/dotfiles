@@ -46,6 +46,12 @@ end
 
 local function setup_lsps()
 	vim.lsp.config("*", {})
+	vim.lsp.config["lua_ls"] = {
+		cmd = { "lua-language-server" },
+		filetypes = { "lua" },
+		root_markers = { ".git" },
+		settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+	}
 	vim.lsp.enable({
 		"ts_ls",
 		"lua_ls",
@@ -63,7 +69,6 @@ local function setup_lsps()
 end
 
 vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/williamboman/mason.nvim",
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/nvim-lua/plenary.nvim",
