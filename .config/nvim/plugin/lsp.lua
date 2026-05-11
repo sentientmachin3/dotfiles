@@ -69,6 +69,7 @@ local function setup_lsps()
 end
 
 vim.pack.add({
+	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/williamboman/mason.nvim",
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/nvim-lua/plenary.nvim",
