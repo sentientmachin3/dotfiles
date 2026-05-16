@@ -34,8 +34,31 @@ network () {
     fi
 }
 
+audio() {
+    sink=$(pactl get-default-sink)
+    sink_vol=$(pactl --format json get-sink-volume $sink | jq '.volume."front-left".value_percent' | sed s/\"//g)
+    sink_mute=$(pactl --format json get-sink-mute $sink | jq '.mute' | sed s/\"//g)
+    if [ "$sink_mute" == "true" ]; then
+        sink_status=" MUTE"
+    else
+        sink_status=" $sink_vol"
+    fi
+
+
+    src=$(pactl get-default-source)
+    src_vol=$(pactl --format json get-source-volume $src | jq '.volume."front-left".value_percent' | sed s/\"//g)
+    src_mute=$(pactl --format json get-source-mute $sink | jq '.mute' | sed s/\"//g)
+    if [ "$sink_mute" == "true" ]; then
+        src_status="MUTE"
+    else
+        src_status="$src_vol"
+    fi
+
+    echo "$sink_status $src_status"
+}
+
 while : 
 do
-    echo "$(network) | $(battery)| $(datetime)"
+    echo "$(audio) | $(network) | $(battery)| $(datetime)"
     sleep 1
 done

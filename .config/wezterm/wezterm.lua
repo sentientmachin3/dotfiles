@@ -6,19 +6,33 @@ local FG_COLOR = "#D3C6AA"
 local config = {
 	enable_tab_bar = true,
 	use_fancy_tab_bar = false,
-    hide_tab_bar_if_only_one_tab = true,
+	hide_tab_bar_if_only_one_tab = true,
 	show_new_tab_button_in_tab_bar = false,
 	tab_bar_at_bottom = true,
 	window_padding = {
 		bottom = 0,
 	},
 	font = wezterm.font({
-		-- family = "Berkeley Mono",
-		family = "Iosevka Dabian",
-	    -- weight = "Medium",
-		weight = "DemiBold",
+		family = "Berkeley Mono",
+		weight = "Medium",
 	}),
-	font_size = 14,
+	font_rules = {
+		{
+			intensity = "Bold",
+			font = wezterm.font({
+				family = "Berkeley Mono",
+				weight = "Medium",
+			}),
+		},
+		{
+			italic = true,
+			font = wezterm.font({
+				family = "Berkeley Mono",
+				weight = "Medium",
+			}),
+		},
+	},
+	font_size = 13,
 	colors = {
 		background = BG_COLOR,
 		foreground = FG_COLOR,
