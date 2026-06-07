@@ -2,6 +2,12 @@ local wezterm = require("wezterm")
 
 local BG_COLOR = "#2D353B"
 local FG_COLOR = "#D3C6AA"
+local DEFAULT_FONT = wezterm.font({
+	-- family = "Berkeley Mono",
+	-- family = "JetbrainsMono NL Nerd Font Mono",
+	family = "Iosevka Dabian",
+	weight = "DemiBold",
+})
 
 local config = {
 	enable_tab_bar = true,
@@ -12,27 +18,18 @@ local config = {
 	window_padding = {
 		bottom = 0,
 	},
-	font = wezterm.font({
-		family = "Berkeley Mono",
-		weight = "Medium",
-	}),
+	font = DEFAULT_FONT,
 	font_rules = {
 		{
 			intensity = "Bold",
-			font = wezterm.font({
-				family = "Berkeley Mono",
-				weight = "Medium",
-			}),
+			font = DEFAULT_FONT,
 		},
 		{
 			italic = true,
-			font = wezterm.font({
-				family = "Berkeley Mono",
-				weight = "Medium",
-			}),
+			font = DEFAULT_FONT,
 		},
 	},
-	font_size = 13,
+	font_size = 14,
 	colors = {
 		background = BG_COLOR,
 		foreground = FG_COLOR,
