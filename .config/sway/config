@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term wezterm
+set $term kitty
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
 
@@ -121,8 +121,8 @@ bar {
     height 20
     font Berkeley Mono Medium 13
     colors {
-        statusline #D3C6AA
-        background #2D353B
+        statusline #D4D4D4
+        background #252525
         inactive_workspace #323232 #323232 #5c5c5c
     }
 }
