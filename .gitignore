@@ -3,6 +3,7 @@
 !.config/nvim/
 !.config/mako/
 !.config/sway/
+.config/sway/apps
 !.config/waybar/
 !.config/kickoff/
 !.config/wezterm/

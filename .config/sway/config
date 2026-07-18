@@ -121,8 +121,8 @@ bar {
     height 20
     font Berkeley Mono Medium 13
     colors {
-        statusline #D4D4D4
-        background #252525
+        statusline #C9C7CD
+        background #161617
         inactive_workspace #323232 #323232 #5c5c5c
     }
 }
