@@ -1,0 +1,3 @@
+projects=thunar $HOME/projects
+dot=thunar .
+dotfiles=thunar ~/dotfiles

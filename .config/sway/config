@@ -10,6 +10,8 @@ set $right l
 set $term kitty
 set $menu kickoff --from-file "$HOME/.config/sway/apps"
 set $powermenu kickoff --from-file "$HOME/.config/sway/powermenu"
+set $shortcuts kickoff --from-file "$HOME/.config/sway/shortcuts"
+set $projects thunar ~/projects/$(ls ~/projects | kickoff --from-stdin --stdout)
 
 # Fonts
 font pango:sf mono 1
@@ -53,6 +55,8 @@ bindsym Mod1 -right_alt
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
+bindsym $mod+e exec $shortcuts
+bindsym $mod+p exec $projects
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec $powermenu
 bindsym $mod+Shift+Left move left
