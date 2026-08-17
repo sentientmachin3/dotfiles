@@ -1,0 +1,58 @@
+local mainMod = "ALT"
+local terminal = "kitty"
+local fileManager = "thunar"
+local menu = "kickoff"
+
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("kickoff --from-file ~/.config/hypr/apps"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("kickoff --from-file ~/.config/hypr/powermenu"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("thunar ~/projects/$(ls ~/projects | kickoff --from-stdin --stdout)"))
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+
+hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+
+-- Switch workspaces with mainMod + [0-9]
+-- Move active window to a workspace with mainMod + SHIFT + [0-9]
+for i = 1, 10 do
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+end
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Laptop multimedia keys for volume and LCD brightness
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("pactl set-mute @DEFAULT_SOURCE@ toggle"),
+	{ locked = true, repeating = true }
+)
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("light -A 3"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("light -U 3"), { locked = true, repeating = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
