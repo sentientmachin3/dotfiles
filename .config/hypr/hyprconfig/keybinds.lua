@@ -56,3 +56,6 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("light -A 3"), { locked = true, r
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("light -U 3"), { locked = true, repeating = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+
+-- grim -g "$(slurp)"
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd('grim -g "$(slurp)"'))
