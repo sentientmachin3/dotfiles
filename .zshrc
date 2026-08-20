@@ -33,4 +33,4 @@ source ~/.aliases
 
 export PATH="$PATH:$HOME/.local/bin"
 # export GPG_TTY=$(tty)
-# eval "$(fnm env)"
+eval "$(fnm env)"
