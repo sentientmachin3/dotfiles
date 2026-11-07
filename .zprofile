@@ -4,6 +4,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec start-hyprland
+  # exec sway
+  # exec startxfce4
+  # exec start-hyprland
+  exec umbriel
 fi
 

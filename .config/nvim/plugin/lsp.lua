@@ -64,6 +64,7 @@ local function setup_lsps()
 		"gopls",
 		"yamlls",
 		"tailwindcss-language-server",
+        "kotlin_language_server",
 		"rust_analyzer",
 	})
 end
