@@ -34,6 +34,7 @@ corner_radius = 1
 
 [input.keyboard]
 numlock_toggle = true
+options = "compose:lwin"
 
 [input.focus]
 follows_mouse = true
